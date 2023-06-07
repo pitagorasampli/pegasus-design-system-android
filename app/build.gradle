@@ -1,0 +1,64 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.kapt'
+    id 'maven-publish'
+
+}
+
+android {
+    namespace "br.com.cogna.pegasusdesignsystemandroid"
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 21
+        versionName "0.0.1"
+        versionCode 1
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion Compose.composeCompilerVersion
+        kotlinCompilerVersion Compose.composeCompilerVersion
+
+    }
+}
+
+
+dependencies {
+    implementation(Compose.composeAnimation)
+    implementation(Compose.composeBom)
+    implementation platform(Compose.composeBom)
+    implementation(Compose.runtime)
+    implementation(Compose.ui)
+    implementation(Compose.material)
+    implementation(Compose.material3)
+    implementation(Compose.uiTooling)
+    implementation(Compose.foundation)
+    implementation(Compose.compiler)
+    implementation(Compose.constraintLayout)
+    implementation(Compose.materialIcons)
+    implementation(Compose.materialIconsExtended)
+    implementation(Compose.activity)
+    implementation(Compose.navigation)
+}
