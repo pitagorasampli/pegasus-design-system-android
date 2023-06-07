@@ -12,8 +12,8 @@ const executeStyleDictionary = (fileName) => {
        return prop.attributes.category === 'sofia';
     },
     transformer: function(prop) {
-      const hex8 = Color(prop.value).toHex8();
-      return `Color(0x${hex8})`;
+      const hex = Color(prop.value).toHex();
+      return `Color(0xFF${hex})`;
     }
   }).extend({
     source: [fileName],
