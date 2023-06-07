@@ -27,7 +27,7 @@ const executeStyleDictionary = (fileName) => {
           "size/dp"
         ],
         transformGroup: 'android',
-        buildPath: 'app/src/main/res/values/',
+        buildPath: 'pegasusdesignsystemandroid/src/main/res/values/',
         files: [{
           destination: 'sofia_tokens_dimens.xml',
           format: "android/fontDimens"
@@ -41,7 +41,7 @@ const executeStyleDictionary = (fileName) => {
         'name/cti/snake', 
         'name/composeColorName'],
         transformGroup: 'compose',
-        buildPath: "app/src/main/java/br/com/cogna/pegasusdesignsystemandroid/sofia/",
+        buildPath: "pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/sofia/",
         files: [{
           destination: "SofiaColors.kt",
           format: "compose/object",

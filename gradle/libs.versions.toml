@@ -23,6 +23,7 @@ compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics", ver
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
 
 [bundles]
 

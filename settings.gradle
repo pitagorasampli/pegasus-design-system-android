@@ -16,4 +16,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "PegasusDesignSystemAndroid"
-include ':app'
+include ':PegasusDesignSystemAndroid'
