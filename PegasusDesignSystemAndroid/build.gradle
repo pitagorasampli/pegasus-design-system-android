@@ -58,7 +58,7 @@ publishing {
         release(MavenPublication) {
             groupId = "com.github.pitagorasampli"
             artifactId = "pegasus-design-system-android"
-            version = "0.0.1"
+            version = "0.0.7-Test"
 
             afterEvaluate {
                 from components.release
