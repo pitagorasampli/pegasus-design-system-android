@@ -7,6 +7,14 @@ plugins {
 }
 
 android {
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+
     namespace "br.com.cogna.pegasusdesignsystemandroid"
     compileSdk 33
 
@@ -44,13 +52,17 @@ android {
     }
 }
 
+
 publishing {
     publications {
-        maven(MavenPublication) {
-            groupId = "br.com.cogna.pegasusdesignsystemandroid"
-            artifactId = 'library'
+        release(MavenPublication) {
+            groupId = "com.github.pitagorasampli"
+            artifactId = "pegasus-design-system-android"
             version = "0.0.1"
 
+            afterEvaluate {
+                from components.release
+            }
 
             pom {
                 name = 'Pegasus Android Design System Library'
@@ -61,6 +73,7 @@ publishing {
 
     }
 }
+
 dependencies {
     implementation(Compose.composeAnimation)
     implementation(Compose.composeBom)
