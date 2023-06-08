@@ -44,7 +44,23 @@ android {
     }
 }
 
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = "br.com.cogna.pegasusdesignsystemandroid"
+            artifactId = 'library'
+            version = "0.0.1"
 
+
+            pom {
+                name = 'Pegasus Android Design System Library'
+                description = 'Pegasus Android Design System  Library for Android'
+            }
+
+        }
+
+    }
+}
 dependencies {
     implementation(Compose.composeAnimation)
     implementation(Compose.composeBom)
