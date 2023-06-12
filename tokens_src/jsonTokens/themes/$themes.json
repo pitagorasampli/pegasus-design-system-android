@@ -1,0 +1,30 @@
+[
+  {
+    "id": "23c8892af71588f8fa403ea1f233d42b07923f98",
+    "name": "light",
+    "$figmaStyleReferences": {},
+    "selectedTokenSets": {
+      "Sofia_light": "enabled",
+      "Sofia_global": "source"
+    },
+    "group": "Sofia"
+  },
+  {
+    "id": "90d952815d6c0dac035b1b6075eb9fd273250b74",
+    "name": "dark",
+    "$figmaStyleReferences": {},
+    "selectedTokenSets": {
+      "Saraiva_global": "source"
+    },
+    "group": "saraiva"
+  },
+  {
+    "id": "10a087077710069a82bd20e6e2a6ecd32b884685",
+    "name": "dark",
+    "$figmaStyleReferences": {},
+    "selectedTokenSets": {
+      "Sofia_global": "source"
+    },
+    "group": "Sofia"
+  }
+]
