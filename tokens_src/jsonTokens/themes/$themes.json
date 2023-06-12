@@ -4,8 +4,8 @@
     "name": "light",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "Sofia_light": "enabled",
-      "Sofia_global": "source"
+      "Sofia/global": "source",
+      "Sofia/light": "enabled"
     },
     "group": "Scheme"
   },
@@ -13,28 +13,40 @@
     "id": "cbf6162375907585accc645041a47c326041b2bc",
     "name": "dark",
     "$figmaStyleReferences": {},
-    "selectedTokenSets": {},
+    "selectedTokenSets": {
+      "Sofia/global": "disabled",
+      "Sofia/light": "disabled"
+    },
     "group": "Scheme"
   },
   {
     "id": "001ebc32ec91998eaaf7230d2455838de3621891",
     "name": "Sofia",
     "$figmaStyleReferences": {},
-    "selectedTokenSets": {},
+    "selectedTokenSets": {
+      "Sofia/global": "disabled",
+      "Sofia/light": "disabled"
+    },
     "group": "Brand"
   },
   {
     "id": "883afdb77d5e8bc33a6def765c16bfd3050c6903",
     "name": "Saraiva",
     "$figmaStyleReferences": {},
-    "selectedTokenSets": {},
+    "selectedTokenSets": {
+      "Sofia/global": "disabled",
+      "Sofia/light": "disabled"
+    },
     "group": "Brand"
   },
   {
     "id": "6e26f0b3cd40dcaaccae9297e5613d00c5ed342d",
     "name": "Red Balloon",
     "$figmaStyleReferences": {},
-    "selectedTokenSets": {},
+    "selectedTokenSets": {
+      "Sofia/global": "disabled",
+      "Sofia/light": "disabled"
+    },
     "group": "Brand"
   }
 ]
