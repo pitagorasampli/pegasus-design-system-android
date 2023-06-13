@@ -1,0 +1,59 @@
+{
+  "source": ["tokens_src/jsonTokens/output.json"],
+  "platforms": {
+    "compose": {
+      "transforms": ["attribute/cti",
+        "name/cti/snake",
+        "name/composeColorName"],
+      "transformGroup": "compose",
+      "buildPath": "pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/sofia/",
+      "files": [{
+        "destination": "SofiaColors.kt",
+        "format": "compose/object",
+        "className": "SofiaColors",
+        "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+        "options": {
+          "outputReferences": true
+        },
+        "filter": {
+          "attributes": {
+           "category": "sofia"
+          }
+        }
+      }, {
+        "destination": "SofiaSizes.kt",
+        "format": "compose/object",
+        "className": "SofiaSizes",
+        "packageName": "SofiaSizes",
+        "type": "float",
+        "filter": {
+          "attributes": {
+            "category": "size"
+          }
+        }
+      }]
+    },
+
+    "android": {
+      "transforms": [
+        "attribute/cti",
+        "name/cti/snake",
+        "color/hex8android",
+        "size/sp",
+        "size/dp"
+      ],
+      "transformGroup": "android",
+      "buildPath": "pegasusdesignsystemandroid/src/main/res/values/",
+      "files": [{
+        "destination": "sofia_tokens_dimens.xml",
+        "format": "android/fontDimens"
+      }, {
+        "destination": "sofia_tokens_colors.xml",
+        "format": "android/colors"
+      }],
+      "options": {
+        "showFileHeader": false
+      }
+    }
+  }
+}

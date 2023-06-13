@@ -21,8 +21,9 @@
     "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
     "storybook": "tsc && npm run analyze -- --exclude dist && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds -c .storybook/server.mjs\"",
     "storybook:build": "tsc && npm run analyze -- --exclude dist && build-storybook",
-    "buildAll": "node getTokens.mjs",
-    "execStyleDictionary": "node execStyleDictionary.mjs"
+    "downloadAndBuildAll": "node getTokens.mjs",
+    "execStyleDictionary": "node execStyleDictionary.mjs",
+    "runStyleDictionary": "node runStyleDictionary.mjs"
   },
   "dependencies": {
     "fs": "^0.0.1-security",
