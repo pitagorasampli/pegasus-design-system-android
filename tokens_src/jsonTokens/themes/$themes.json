@@ -4,8 +4,8 @@
     "name": "light",
     "$figmaStyleReferences": {},
     "selectedTokenSets": {
-      "Sofia_light": "enabled",
-      "Sofia_global": "source"
+      "Sofia/global": "source",
+      "Sofia/light": "enabled"
     },
     "group": "Scheme"
   },

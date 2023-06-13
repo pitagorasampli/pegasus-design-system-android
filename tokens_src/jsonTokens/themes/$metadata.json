@@ -1,6 +1,10 @@
 {
   "tokenSetOrder": [
-    "Sofia_global",
-    "Sofia_light"
+    "Sofia/global",
+    "Sofia/light",
+    "Saraiva/global",
+    "Saraiva/light",
+    "Red Balloon/ global",
+    "Red Balloon/light"
   ]
 }
