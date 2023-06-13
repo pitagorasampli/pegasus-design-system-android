@@ -124,11 +124,11 @@
             "type": "color"
           },
           "warning": {
-            "value": "{palette.warning.20}",
+            "value": "{palette.warning.10}",
             "type": "color"
           },
           "onWarning": {
-            "value": "#",
+            "value": "{palette.warning.100}",
             "type": "color"
           },
           "warningContainer": {
