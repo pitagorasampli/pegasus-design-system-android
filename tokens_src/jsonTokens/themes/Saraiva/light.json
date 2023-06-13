@@ -1,5 +1,5 @@
 {
-  "sofia": {
+  "saraiva": {
     "color": {
       "light": {
         "brand": {
@@ -7,7 +7,7 @@
             "value": "{palette.primary.20}",
             "type": "color"
           },
-          "onPrimaryMain": {
+          "onPrimaryDark": {
             "value": "{palette.primary.100}",
             "type": "color"
           },
@@ -15,7 +15,7 @@
             "value": "{palette.primary.40}",
             "type": "color"
           },
-          "onPrimaryDark": {
+          "onPrimaryMain": {
             "value": "{palette.primary.100}",
             "type": "color"
           },
@@ -32,11 +32,11 @@
             "type": "color"
           },
           "onPrimaryContainer": {
-            "value": "{palette.primary.20}",
+            "value": "{palette.primary.10}",
             "type": "color"
           },
           "secondaryDark": {
-            "value": "{palette.secondary.20}",
+            "value": "{palette.secondary.10}",
             "type": "color"
           },
           "onSecondaryDark": {
@@ -44,7 +44,7 @@
             "type": "color"
           },
           "secondaryMain": {
-            "value": "{palette.secondary.30}",
+            "value": "{palette.secondary.20}",
             "type": "color"
           },
           "onSecondaryMain": {
@@ -64,7 +64,7 @@
             "type": "color"
           },
           "onSecondaryContainer": {
-            "value": "{palette.secondary.0}",
+            "value": "{palette.secondary.20}",
             "type": "color"
           }
         },
@@ -81,8 +81,8 @@
             "value": "{palette.neutrals.50}",
             "type": "color"
           },
-          "surface": {
-            "value": "{palette.neutrals.95}",
+          "Surface": {
+            "value": "{palette.neutrals.90}",
             "type": "color"
           },
           "onSurface": {
@@ -128,7 +128,7 @@
             "type": "color"
           },
           "onWarning": {
-            "value": "#",
+            "value": "{palette.warning.100}",
             "type": "color"
           },
           "warningContainer": {

@@ -1,6 +1,8 @@
 {
   "tokenSetOrder": [
     "Sofia/global",
-    "Sofia/light"
+    "Sofia/light",
+    "Saraiva/global",
+    "Saraiva/light"
   ]
 }
