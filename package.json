@@ -23,7 +23,8 @@
     "storybook:build": "tsc && npm run analyze -- --exclude dist && build-storybook",
     "downloadAndBuildAll": "node getTokens.mjs",
     "execStyleDictionary": "node execStyleDictionary.mjs",
-    "runStyleDictionary": "node runStyleDictionary.mjs"
+    "runStyleDictionary": "node runStyleDictionary.mjs",
+    "runSofiaStyleDictionary": "node runSofiaStyleDictionary.mjs"
   },
   "dependencies": {
     "@tokens-studio/sd-transforms": "^0.9.8",

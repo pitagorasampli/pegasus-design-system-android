@@ -14,9 +14,16 @@ composeTransformUtils(styleDictionary)
 styleDictionary.buildAllPlatforms();
 
 const borderFilePath = 'pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/sofia/SofiaBorders.kt';
-const searchString = 'object';
-const lineToAdd = 'import androidx.compose.foundation.shape.RoundedCornerShape\n';
+const borderSearchString = 'object';
+const borderLineToAdd = 'import androidx.compose.foundation.shape.RoundedCornerShape\n';
 
-composeFileUtils.addRoundedCornerShapeImport(borderFilePath, searchString, lineToAdd)
+composeFileUtils.addRoundedCornerShapeImport(borderFilePath, borderSearchString, borderLineToAdd)
+
+
+const fontWeightFilePath = 'pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/sofia/SofiaFontWeight.kt';
+const fontWeightSearchString = 'object';
+const fontWeightLineToAdd = 'import androidx.compose.ui.text.font.FontWeight\n';
+
+//composeFileUtils.addRoundedCornerShapeImport(fontWeightFilePath, fontWeightSearchString, fontWeightLineToAdd)
 
 

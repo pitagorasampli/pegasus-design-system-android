@@ -1,0 +1,130 @@
+{
+  "source": [
+    "tokens_src/jsonTokens/themes/Sofia/**/*.json"
+  ],
+  "platforms": {
+    "compose": {
+      "transforms": [
+        "attribute/cti",
+        "name/cti/snake",
+        "name/composeColorName",
+        "name/composeColorReference",
+        "name/composeElevation",
+        "size/px_to_dp"
+      ],
+      "transformGroup": "compose",
+      "buildPath": "pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/sofia/",
+      "files": [
+        {
+          "destination": "SofiaPalette.kt",
+          "format": "compose/object",
+          "className": "SofiaPalette",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "filter": {
+            "attributes": {
+              "category": "palette"
+            }
+          }
+        },
+
+        {
+          "destination": "SofiaScheme.kt",
+          "format": "compose/object",
+          "className": "SofiaScheme",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "filter": {
+            "attributes": {
+              "type": "color"
+            }
+          }
+        },
+
+        {
+          "destination": "SofiaSpacing.kt",
+          "format": "compose/object",
+          "className": "SofiaSpacing",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "type": "float",
+          "filter": {
+            "attributes": {
+              "category": "spacing"
+            }
+          }
+        },
+
+        {
+          "destination": "SofiaBorders.kt",
+          "format": "compose/object",
+          "className": "SofiaBorders",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "type": "float",
+          "filter": {
+            "attributes": {
+              "category": "border"
+            }
+          }
+        },
+
+        {
+          "destination": "SofiaElevation.kt",
+          "format": "compose/object",
+          "className": "SofiaElevation",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "filter": {
+            "attributes": {
+              "category": "elevation"
+            }
+          }
+        },
+
+        {
+          "destination": "SofiaFontSizes.kt",
+          "format": "compose/object",
+          "className": "SofiaFontSizes",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "filter": {
+            "attributes": {
+              "category": "fontSize"
+            }
+          }
+        },
+
+        {
+          "destination": "SofiaLineHeight.kt",
+          "format": "compose/object",
+          "className": "SofiaLineHeight",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "filter": {
+            "attributes": {
+              "category": "lineHeight"
+            }
+          }
+        }
+      ]
+    },
+    "android": {
+      "transforms": [
+        "attribute/cti",
+        "name/cti/snake",
+        "color/hex8android",
+        "size/sp",
+        "size/dp"
+      ],
+      "transformGroup": "android",
+      "buildPath": "pegasusdesignsystemandroid/src/main/res/values/",
+      "files": [
+        {
+          "destination": "sofia_tokens_dimens.xml",
+          "format": "android/fontDimens"
+        },
+        {
+          "destination": "sofia_tokens_colors.xml",
+          "format": "android/colors"
+        }
+      ],
+      "options": {
+        "showFileHeader": false
+      }
+    }
+  }
+}
