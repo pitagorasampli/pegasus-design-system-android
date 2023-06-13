@@ -53,18 +53,30 @@ styleDictionary.registerTransform({
                  transitive: true,
                  matcher: token => ['fontWeights'].includes(token.type),
                  transformer: function(token)  {
-                 return "FontWeight.${token.value}"
+                 return "FontWeight.${token.value}";
                  }
 });
 
+//Todo: this font family
 styleDictionary.registerTransform({
                  name: 'name/composeFontFamily',
                  type: 'value',
                  transitive: true,
                  matcher: token => ['fontFamilies'].includes(token.type),
                  transformer: function(token)  {
-                 return "${token.value}"
+                   return '"Teste"';
                  }
+});
+
+styleDictionary.registerTransform({
+                 name: 'name/composeTypography',
+                 type: 'value',
+                 transitive: true,
+                 matcher: token => ['typography'].includes(token.type),
+                 transformer: function(token)  {
+                   const {value} = token
+                       return `${value.fontWeight} ${value.fontSize}/${value.lineHeight} ${value.fontFamily}`;
+                     }
 });
 
 styleDictionary.registerTransform({

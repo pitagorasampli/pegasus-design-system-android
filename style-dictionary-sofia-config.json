@@ -10,6 +10,9 @@
         "name/composeColorName",
         "name/composeColorReference",
         "name/composeElevation",
+        "name/composeFontFamily",
+        "size/composeFontWeight",
+        "name/composeTypography",
         "size/px_to_dp"
       ],
       "transformGroup": "compose",
@@ -97,6 +100,52 @@
           "filter": {
             "attributes": {
               "category": "lineHeight"
+            }
+          }
+        },
+
+        {
+          "destination": "SofiaFontFamily.kt",
+          "format": "compose/object",
+          "className": "SofiaFontFamily",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "options": {
+            "outputReferences": true
+          },
+          "filter": {
+            "attributes": {
+              "category": "fontFamily"
+            }
+          }
+        },
+
+        {
+          "destination": "SofiaFontWeight.kt",
+          "format": "compose/object",
+          "className": "SofiaFontWeight",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "type": "float",
+          "options": {
+            "outputReferences": true
+          },
+          "filter": {
+            "attributes": {
+              "category": "fontWeight"
+            }
+          }
+        },
+
+        {
+          "destination": "SofiaTypography.kt",
+          "format": "compose/object",
+          "className": "SofiaTypography",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "options": {
+            "outputReferences": true
+          },
+          "filter": {
+            "attributes": {
+              "category": "typography"
             }
           }
         }
