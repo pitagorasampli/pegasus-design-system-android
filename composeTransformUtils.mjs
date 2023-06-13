@@ -48,12 +48,14 @@ styleDictionary.registerTransform({
 });
 
 styleDictionary.registerTransform({
-                 name: 'size/composeFontWeight',
+                 name: 'name/composeFontWeight',
                  type: 'value',
                  transitive: true,
-                 matcher: token => ['fontWeights'].includes(token.type),
+                   matcher: function(prop) {
+                        return prop.attributes.category === 'fontWeight';
+                     },
                  transformer: function(token)  {
-                 return "FontWeight.${token.value}";
+                 return `FontWeight(${token.value})`;
                  }
 });
 
@@ -68,7 +70,7 @@ styleDictionary.registerTransform({
                  }
 });
 
-styleDictionary.registerTransform({
+/* styleDictionary.registerTransform({
                  name: 'name/composeTypography',
                  type: 'value',
                  transitive: true,
@@ -77,7 +79,25 @@ styleDictionary.registerTransform({
                    const {value} = token
                        return `${value.fontWeight} ${value.fontSize}/${value.lineHeight} ${value.fontFamily}`;
                      }
-});
+}); */
+
+styleDictionary.registerFormat({
+                   name: 'compose/typography',
+                   formatter: function (dictionary, config) {
+                     return `
+                 ${dictionary.allProperties
+                   .map((prop) => {
+                     return `
+                 .${prop.name} {
+                     font-family: ${prop.value.fontFamily},
+                     font-size: ${prop.value.fontSize},
+                     font-weight: ${prop.value.fontWeight},
+                     line-height: ${prop.value.lineHeight}
+                 };`})
+                   .join('\n')}
+                 `
+                   },
+                 })
 
 styleDictionary.registerTransform({
                  name: 'name/composeElevation',

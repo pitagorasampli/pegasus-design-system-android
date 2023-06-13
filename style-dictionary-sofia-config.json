@@ -11,8 +11,7 @@
         "name/composeColorReference",
         "name/composeElevation",
         "name/composeFontFamily",
-        "size/composeFontWeight",
-        "name/composeTypography",
+        "name/composeFontWeight",
         "size/px_to_dp"
       ],
       "transformGroup": "compose",
@@ -137,7 +136,7 @@
 
         {
           "destination": "SofiaTypography.kt",
-          "format": "compose/object",
+          "format": "compose/typography",
           "className": "SofiaTypography",
           "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
           "options": {

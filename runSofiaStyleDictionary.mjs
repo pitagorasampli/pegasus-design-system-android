@@ -24,6 +24,6 @@ const fontWeightFilePath = 'pegasusdesignsystemandroid/src/main/java/br/com/cogn
 const fontWeightSearchString = 'object';
 const fontWeightLineToAdd = 'import androidx.compose.ui.text.font.FontWeight\n';
 
-//composeFileUtils.addRoundedCornerShapeImport(fontWeightFilePath, fontWeightSearchString, fontWeightLineToAdd)
+composeFileUtils.addRoundedCornerShapeImport(fontWeightFilePath, fontWeightSearchString, fontWeightLineToAdd)
 
 
