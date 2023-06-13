@@ -26,6 +26,7 @@
     "runStyleDictionary": "node runStyleDictionary.mjs"
   },
   "dependencies": {
+    "@tokens-studio/sd-transforms": "^0.9.8",
     "fs": "^0.0.1-security",
     "lit": "^2.0.2",
     "node-fetch": "^3.3.1",

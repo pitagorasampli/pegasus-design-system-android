@@ -3,6 +3,7 @@
 ```bash
 npm install node-fetch
 npm install -g style-dictionary
+npm install @tokens-studio/sd-transforms
 ```
 
 ## Scripts

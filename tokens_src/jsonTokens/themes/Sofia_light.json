@@ -120,7 +120,7 @@
             "type": "color"
           },
           "onWarning": {
-            "value": "#",
+            "value": "{palette.warning.20}",
             "type": "color"
           },
           "warningContainer": {

@@ -1,37 +1,67 @@
 {
-  "source": ["tokens_src/jsonTokens/output.json"],
+  "source": ["tokens_src/jsonTokens/themes/**/*.json"],
   "platforms": {
     "compose": {
       "transforms": ["attribute/cti",
         "name/cti/snake",
-        "name/composeColorName"],
+        "size/sp",
+        "size/dp",
+        "name/globalSofiaComposeColorName",
+      "name/sofiaColorReference",
+      "size/px_to_dp"],
       "transformGroup": "compose",
       "buildPath": "pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/sofia/",
-      "files": [{
-        "destination": "SofiaColors.kt",
-        "format": "compose/object",
-        "className": "SofiaColors",
-        "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
-        "options": {
-          "outputReferences": true
+      "files": [
+        {
+          "destination": "SofiaPalette.kt",
+          "format": "compose/object",
+          "className": "SofiaPalette",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "filter": {
+            "attributes": {
+              "category": "palette"
+            }
+          }
         },
-        "filter": {
-          "attributes": {
-           "category": "sofia"
-          }
-        }
-      }, {
-        "destination": "SofiaSizes.kt",
+
+        {
+        "destination": "SofiaScheme.kt",
         "format": "compose/object",
-        "className": "SofiaSizes",
-        "packageName": "SofiaSizes",
-        "type": "float",
+        "className": "SofiaScheme",
+        "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
         "filter": {
           "attributes": {
-            "category": "size"
+           "type": "color"
           }
         }
-      }]
+      },
+        {
+          "destination": "SofiaSpacing.kt",
+          "format": "compose/object",
+          "className": "SofiaSpacing",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "type": "float",
+          "filter": {
+            "attributes": {
+              "category": "spacing"
+            }
+          }
+        },
+
+        {
+          "destination": "SofiaBorders.kt",
+          "format": "compose/object",
+          "className": "SofiaBorders",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "type": "float",
+          "filter": {
+            "attributes": {
+              "category": "border"
+            }
+          }
+        }
+
+      ]
     },
 
     "android": {
