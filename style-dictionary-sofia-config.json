@@ -12,7 +12,8 @@
         "name/composeElevation",
         "name/composeFontFamily",
         "name/composeFontWeight",
-        "size/px_to_dp"
+        "size/px_to_dp",
+        "size/px_to_sp"
       ],
       "transformGroup": "compose",
       "buildPath": "pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/sofia/",

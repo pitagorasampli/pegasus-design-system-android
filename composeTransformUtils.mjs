@@ -33,11 +33,30 @@ styleDictionary.registerTransform({
                  name: 'size/px_to_dp',
                  type: 'value',
                  transitive: true,
-                 matcher: token => ['spacing', 'borderRadius', 'borderWidth', 'fontSizes', 'lineHeights'].includes(token.type),
+                 matcher: token => ['spacing', 'borderRadius', 'borderWidth'].includes(token.type),
                  transformer: function(token)  {
                     if (token.value.endsWith('px')) {
                       const dimen = transformDimension(token.value);
                       return `${dimen}.dp`.replace(/px/g, "");
+                    } else if (token.value.endsWith('%')) {
+                      const value = token.value.replace('%', '');
+                      return `RoundedCornerShape(${value})`;
+                    } else {
+                      return token.value;
+                  }
+                 }
+});
+
+
+styleDictionary.registerTransform({
+                 name: 'size/px_to_sp',
+                 type: 'value',
+                 transitive: true,
+                 matcher: token => ['fontSizes', 'lineHeights'].includes(token.type),
+                 transformer: function(token)  {
+                    if (token.value.endsWith('px')) {
+                      const dimen = transformDimension(token.value);
+                      return `${dimen}.sp`.replace(/px/g, "");
                     } else if (token.value.endsWith('%')) {
                       const value = token.value.replace('%', '');
                       return `RoundedCornerShape(${value})`;
@@ -64,40 +83,37 @@ styleDictionary.registerTransform({
                  name: 'name/composeFontFamily',
                  type: 'value',
                  transitive: true,
-                 matcher: token => ['fontFamilies'].includes(token.type),
+                   matcher: function(prop) {
+                 return prop.attributes.category === 'fontFamily';
+                 },
                  transformer: function(token)  {
-                   return '"Teste"';
+                   return `"${token.value}"`;
                  }
 });
-
-/* styleDictionary.registerTransform({
-                 name: 'name/composeTypography',
-                 type: 'value',
-                 transitive: true,
-                 matcher: token => ['typography'].includes(token.type),
-                 transformer: function(token)  {
-                   const {value} = token
-                       return `${value.fontWeight} ${value.fontSize}/${value.lineHeight} ${value.fontFamily}`;
-                     }
-}); */
 
 styleDictionary.registerFormat({
                    name: 'compose/typography',
                    formatter: function (dictionary, config) {
                      return `
-                 ${dictionary.allProperties
-                   .map((prop) => {
-                     return `
-                 .${prop.name} {
-                     font-family: ${prop.value.fontFamily},
-                     font-size: ${prop.value.fontSize},
-                     font-weight: ${prop.value.fontWeight},
-                     line-height: ${prop.value.lineHeight}
-                 };`})
-                   .join('\n')}
-                 `
-                   },
-                 })
+package br.com.cogna.pegasusdesignsystemandroid.sofia
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
+
+object SofiaTypography{
+${dictionary.allProperties
+  .map((prop) => {
+    return `
+val ${prop.name}  = TextStyle(
+   fontWeight = ${prop.value.fontWeight},
+   fontSize = ${prop.value.fontSize},
+   lineHeight = ${prop.value.lineHeight},
+)`})
+  .join('\n')}
+}
+`
+  },
+ })
 
 styleDictionary.registerTransform({
                  name: 'name/composeElevation',
