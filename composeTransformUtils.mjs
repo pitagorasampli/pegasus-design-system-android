@@ -78,7 +78,7 @@ styleDictionary.registerTransform({
                  }
 });
 
-//Todo: this font family
+
 styleDictionary.registerTransform({
                  name: 'name/composeFontFamily',
                  type: 'value',

@@ -6,47 +6,47 @@
         "type": "color"
       },
       "10": {
-        "value": "#001f50",
+        "value": "#231B3A",
         "type": "color"
       },
       "20": {
-        "value": "#002871",
+        "value": "#3D2E68",
         "type": "color"
       },
       "30": {
-        "value": "#003491",
+        "value": "#574583",
         "type": "color"
       },
       "40": {
-        "value": "#0041af",
+        "value": "#746199",
         "type": "color"
       },
       "50": {
-        "value": "#004ecc",
+        "value": "#9484B0",
         "type": "color"
       },
       "60": {
-        "value": "#3969eb",
+        "value": "#A697BD",
         "type": "color"
       },
       "70": {
-        "value": "#7389ff",
+        "value": "#BCB2CD",
         "type": "color"
       },
       "80": {
-        "value": "#acb1ff",
+        "value": "#D2CADC",
         "type": "color"
       },
       "90": {
-        "value": "#dadcff",
+        "value": "#E2DEE8",
         "type": "color"
       },
       "95": {
-        "value": "#eff0ff",
+        "value": "#F1EFF4",
         "type": "color"
       },
       "99": {
-        "value": "#f8f8ff",
+        "value": "#FCFCFD",
         "type": "color"
       },
       "100": {
@@ -60,47 +60,47 @@
         "type": "color"
       },
       "10": {
-        "value": "#34170d",
+        "value": "#0C2234",
         "type": "color"
       },
       "20": {
-        "value": "#641f10",
+        "value": "#0C3A5D",
         "type": "color"
       },
       "30": {
-        "value": "#932b15",
+        "value": "#125385",
         "type": "color"
       },
       "40": {
-        "value": "#c53a1d",
+        "value": "#125385",
         "type": "color"
       },
       "50": {
-        "value": "#ee4623",
+        "value": "#1772B5",
         "type": "color"
       },
       "60": {
-        "value": "#ff6d46",
+        "value": "#3394E8",
         "type": "color"
       },
       "70": {
-        "value": "#ff9c7c",
+        "value": "#5BA2EB",
         "type": "color"
       },
       "80": {
-        "value": "#febda9",
+        "value": "#90BCF0",
         "type": "color"
       },
       "90": {
-        "value": "#fcd8cc",
+        "value": "#B7D0F2",
         "type": "color"
       },
       "95": {
-        "value": "#fcede9",
+        "value": "#ECF0F9",
         "type": "color"
       },
       "99": {
-        "value": "#fefbfa",
+        "value": "#FCFCFD",
         "type": "color"
       },
       "100": {
@@ -435,7 +435,7 @@
   },
   "fontFamily": {
     "1": {
-      "value": "Montserrat",
+      "value": "Roboto",
       "type": "fontFamilies"
     }
   },
@@ -539,6 +539,12 @@
     "black": {
       "value": "900",
       "type": "fontWeights"
+    }
+  },
+  "fontVariant": {
+    "italic": {
+      "value": "Italic",
+      "type": "textCase"
     }
   },
   "typography": {
