@@ -95,7 +95,7 @@ styleDictionary.registerFormat({
                    name: 'compose/typography',
                    formatter: function (dictionary, config) {
                      return `
-package br.com.cogna.pegasusdesignsystemandroid.sofia
+package br.com.cogna.pegasusdesignsystemandroid.brands.sofia
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp

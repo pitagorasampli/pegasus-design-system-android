@@ -1,35 +1,36 @@
 plugins {
-    id 'com.android.library'
+    id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'org.jetbrains.kotlin.kapt'
-    id 'maven-publish'
+
 }
 
 android {
 
-    publishing {
-        singleVariant("release") {
-            withSourcesJar()
-            withJavadocJar()
-        }
-    }
-
-    namespace ApplicationConfig.android_ds_library_id
+    namespace ApplicationConfig.android_ds_showcase_app_id
     compileSdk ApplicationConfig.compileSdkVersion
 
     defaultConfig {
+        applicationId ApplicationConfig.android_ds_showcase_app_id
         minSdk ApplicationConfig.minSdk
+        targetSdk ApplicationConfig.compileSdkVersion
         versionCode Releases.android_ds_version_code
         versionName Releases.android_ds_version_name
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
+        testInstrumentationRunner Testing.androidJUnitRunner
+        vectorDrawables {
+            useSupportLibrary true
+        }
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
         }
     }
     compileOptions {
@@ -39,41 +40,30 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
-
     buildFeatures {
         compose true
     }
-
     composeOptions {
         kotlinCompilerExtensionVersion Compose.composeCompilerVersion
         kotlinCompilerVersion Compose.composeCompilerVersion
 
     }
-}
-
-
-publishing {
-    publications {
-        release(MavenPublication) {
-            groupId = Publishing.android_ds_publish_library_group_id
-            artifactId = Publishing.android_ds_publish_library_artifact_id
-            version = Publishing.android_ds_publish_release_version_name
-
-            afterEvaluate {
-                from components.release
-            }
-
-            pom {
-                name = 'Pegasus Android Design System Library'
-                description = 'Pegasus Android Design System Library for Android'
-            }
-
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
-
     }
 }
 
 dependencies {
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+
+    implementation (ShowKase.showKase)
+    kapt (ShowKase.showKaseProcessor)
+
+    implementation(project(PegasusAndroid.pegasusDesignSystemLibrary))
     implementation(Compose.composeAnimation)
     implementation(Compose.composeBom)
     implementation platform(Compose.composeBom)
@@ -88,9 +78,6 @@ dependencies {
     implementation(Compose.materialIcons)
     implementation(Compose.materialIconsExtended)
     implementation(Compose.activity)
-    implementation(ImageLibraries.coil)
     implementation(Compose.navigation)
-
-    implementation (ShowKase.showKase)
-    kapt (ShowKase.showKaseProcessor)
+    implementation(ImageLibraries.coil)
 }

@@ -16,13 +16,13 @@
         "size/px_to_sp"
       ],
       "transformGroup": "compose",
-      "buildPath": "pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/sofia/",
+      "buildPath": "pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/brands/sofia/",
       "files": [
         {
           "destination": "SofiaPalette.kt",
           "format": "compose/object",
           "className": "SofiaPalette",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia",
           "filter": {
             "attributes": {
               "category": "palette"
@@ -34,7 +34,7 @@
           "destination": "SofiaScheme.kt",
           "format": "compose/object",
           "className": "SofiaScheme",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia",
           "filter": {
             "attributes": {
               "type": "color"
@@ -46,7 +46,7 @@
           "destination": "SofiaSpacing.kt",
           "format": "compose/object",
           "className": "SofiaSpacing",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia",
           "type": "float",
           "filter": {
             "attributes": {
@@ -59,7 +59,7 @@
           "destination": "SofiaBorders.kt",
           "format": "compose/object",
           "className": "SofiaBorders",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia",
           "type": "float",
           "filter": {
             "attributes": {
@@ -72,7 +72,7 @@
           "destination": "SofiaElevation.kt",
           "format": "compose/object",
           "className": "SofiaElevation",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia",
           "filter": {
             "attributes": {
               "category": "elevation"
@@ -84,7 +84,7 @@
           "destination": "SofiaFontSizes.kt",
           "format": "compose/object",
           "className": "SofiaFontSizes",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia",
           "filter": {
             "attributes": {
               "category": "fontSize"
@@ -96,7 +96,7 @@
           "destination": "SofiaLineHeight.kt",
           "format": "compose/object",
           "className": "SofiaLineHeight",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia",
           "filter": {
             "attributes": {
               "category": "lineHeight"
@@ -108,7 +108,7 @@
           "destination": "SofiaFontFamily.kt",
           "format": "compose/object",
           "className": "SofiaFontFamily",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia",
           "options": {
             "outputReferences": true
           },
@@ -123,7 +123,7 @@
           "destination": "SofiaFontWeight.kt",
           "format": "compose/object",
           "className": "SofiaFontWeight",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia",
           "type": "float",
           "options": {
             "outputReferences": true
@@ -139,7 +139,7 @@
           "destination": "SofiaTypography.kt",
           "format": "compose/typography",
           "className": "SofiaTypography",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.sofia",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia",
           "options": {
             "outputReferences": true
           },

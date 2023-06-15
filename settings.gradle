@@ -17,3 +17,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "PegasusDesignSystemAndroid"
 include ':PegasusDesignSystemAndroid'
+include ':pegasus_showcase'
