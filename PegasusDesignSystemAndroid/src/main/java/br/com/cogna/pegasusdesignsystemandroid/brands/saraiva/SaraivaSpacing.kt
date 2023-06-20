@@ -1,16 +1,16 @@
 
 
 // Do not edit directly
-// Generated on Mon, 19 Jun 2023 13:02:46 GMT
+// Generated on Mon, 19 Jun 2023 13:03:27 GMT
 
 
 
-package br.com.cogna.pegasusdesignsystemandroid.brands.sofia;
+package br.com.cogna.pegasusdesignsystemandroid.brands.saraiva;
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.*
 
-object SofiaSpacing {
+object SaraivaSpacing {
   val spacing_0 = 0.dp
   val spacing_1 = 1.dp
   val spacing_10 = 40.dp
@@ -25,7 +25,7 @@ object SofiaSpacing {
   val spacing_3 = 4.dp
   val spacing_4 = 8.dp
   val spacing_5 = 12.dp
-  val spacing_6 = 16.dp
+  val spacing_6 = 116.dp
   val spacing_7 = 20.dp
   val spacing_8 = 24.dp
   val spacing_9 = 32.dp

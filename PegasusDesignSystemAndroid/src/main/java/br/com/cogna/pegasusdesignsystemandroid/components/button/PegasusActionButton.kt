@@ -1,6 +1,5 @@
 package br.com.cogna.pegasusdesignsystemandroid.components.button
 
-import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
@@ -27,6 +26,7 @@ import androidx.compose.material.icons.rounded.Save
 import androidx.compose.material.icons.rounded.ShoppingCart
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -39,47 +39,98 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import br.com.cogna.pegasusdesignsystemandroid.components.theme.PegasusTheme
+import br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme.SaraivaPreviews
+import br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme.SaraivaTheme
+import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.LocalPegasusSpacingComposition
+import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.SofiaPreviews
 import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.SofiaTheme
+import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.sofiaSpacing
+import br.com.cogna.pegasusdesignsystemandroid.components.theme.PegasusThemeProvider
 import com.airbnb.android.showkase.annotation.ShowkaseComposable
+
+enum class PegasusActionButtonState {
+    ENABLED, DISABLED, LOADING
+}
+
 
 @Composable
 fun PegasusActionButton(
     text: String,
     modifier: Modifier = Modifier,
+    backgroundModifier: Modifier = Modifier,
     iconLeft: (@Composable () -> Unit)? = null,
     iconRight: (@Composable () -> Unit)? = null,
-    loading: Boolean = false,
-    backgroundColor: Color? = MaterialTheme.colorScheme.primary,
-    enabled: Boolean = true,
-    description: String? = null,
-    onClick: () -> Unit = { }
+    buttonState: PegasusActionButtonState = PegasusActionButtonState.ENABLED,
+    backgroundColor: Color = PegasusThemeProvider.colorScheme.primary,
+    disabledBackgroundColor: Color = PegasusThemeProvider.colorScheme.surface,
+    enabledElementsColor: Color = PegasusThemeProvider.colorScheme.onPrimary,
+    disabledElementsColor: Color = PegasusThemeProvider.colorScheme.onBackgroundSecondary,
+    contentDescription: String? = null,
+    onClickEnabled: () -> Unit = {},
 ) {
 
-    val elementsColor = MaterialTheme.colorScheme.onPrimary
+    when (buttonState) {
+        PegasusActionButtonState.LOADING -> {
+            PegasusActionButtonLoading(
+                modifier = modifier,
+                backgroundModifier = backgroundModifier
+            )
+        }
 
-    val backgroundButtonColor = backgroundColor ?: Color.Transparent
+        else -> {
+            PegasusActionButtonEnabled(
+                modifier = modifier,
+                backgroundModifier = backgroundModifier,
+                backgroundColor = backgroundColor,
+                enabledElementsColor = enabledElementsColor,
+                disabledBackgroundColor = disabledBackgroundColor,
+                disabledElementsColor = disabledElementsColor,
+                text = text,
+                buttonState = buttonState,
+                contentDescription = contentDescription,
+                iconLeft = iconLeft,
+                iconRight = iconRight,
+                onClickEnabled = onClickEnabled
+            )
+        }
+    }
+}
 
-    Button(modifier = modifier,
+
+@Composable
+fun PegasusActionButtonEnabled(
+    modifier: Modifier = Modifier,
+    backgroundModifier: Modifier = Modifier,
+    backgroundColor: Color = PegasusThemeProvider.colorScheme.primary,
+    disabledBackgroundColor: Color = PegasusThemeProvider.colorScheme.surface,
+    enabledElementsColor: Color = PegasusThemeProvider.colorScheme.onPrimary,
+    disabledElementsColor: Color = PegasusThemeProvider.colorScheme.onBackgroundSecondary,
+    text: String,
+    buttonState: PegasusActionButtonState = PegasusActionButtonState.ENABLED,
+    contentDescription: String? = null,
+    iconLeft: (@Composable () -> Unit)? = null,
+    iconRight: (@Composable () -> Unit)? = null,
+    onClickEnabled: () -> Unit
+) {
+
+    //TODO: Chamar Naila, cor neutral 80 nao tem color role atribuida a ela para o texto no disabled
+    Button(
+        modifier = modifier,
+        enabled = buttonState == PegasusActionButtonState.ENABLED,
         colors = ButtonDefaults.buttonColors(
-            backgroundColor = backgroundButtonColor, contentColor = elementsColor
+            backgroundColor = backgroundColor,
+            contentColor = enabledElementsColor,
+            disabledBackgroundColor = disabledBackgroundColor,
+            disabledContentColor = disabledElementsColor
         ),
         elevation = ButtonDefaults.elevation(1.dp),
         contentPadding = PaddingValues(),
         shape = MaterialTheme.shapes.medium,
-        onClick = { if (enabled) onClick() }) {
-
-        val backgroundModifier = if (enabled && loading.not()) {
-            if (backgroundColor != null) {
-                Modifier.background(backgroundColor)
-            } else {
-                Modifier.background(color = MaterialTheme.colorScheme.primary)
-            }
-        } else {
-            Modifier.background(color = MaterialTheme.colorScheme.primary)
+        onClick = {
+            onClickEnabled()
         }
+    ) {
 
         Box(
             modifier = backgroundModifier
@@ -92,24 +143,63 @@ fun PegasusActionButton(
                     start = 16.dp, end = 16.dp, top = 16.dp, bottom = 16.dp
                 )
             ) {
+                iconLeft?.invoke()
 
-                if (loading) {
-                    PegasusActionButtonLoading()
-                } else {
-                    iconLeft?.invoke()
+                PegasusButtonText(
+                    description = contentDescription,
+                    text = text,
+                    elementsColor = if (buttonState == PegasusActionButtonState.ENABLED) enabledElementsColor else disabledElementsColor
+                )
 
-                    AppButtonText(description, text, elementsColor)
+                iconRight?.invoke()
 
-                    iconRight?.invoke()
-                }
             }
         }
+    }
+}
 
+
+@Composable
+fun PegasusActionButtonLoading(
+    modifier: Modifier = Modifier,
+    backgroundModifier: Modifier = Modifier
+) {
+
+    Button(
+        modifier = modifier,
+        enabled = false,
+        colors = ButtonDefaults.buttonColors(
+            backgroundColor = PegasusThemeProvider.colorScheme.surface,
+            contentColor = PegasusThemeProvider.colorScheme.onBackgroundSecondary,
+            disabledBackgroundColor = PegasusThemeProvider.colorScheme.surface,
+            disabledContentColor = PegasusThemeProvider.colorScheme.onBackgroundSecondary
+        ),
+        elevation = ButtonDefaults.elevation(1.dp),
+        contentPadding = PaddingValues(),
+        shape = MaterialTheme.shapes.medium,
+        onClick = {}
+    ) {
+
+
+        Box(
+            modifier = backgroundModifier
+                .fillMaxWidth()
+                .then(modifier),
+            contentAlignment = Alignment.Center,
+        ) {
+            Row(
+                horizontalArrangement = Arrangement.Center, modifier = modifier.padding(
+                    start = 16.dp, end = 16.dp, top = 16.dp, bottom = 16.dp
+                )
+            ) {
+                PegasusActionButtonLoadingIcon()
+            }
+        }
     }
 }
 
 @Composable
-fun PegasusActionButtonLoading(tint: Color = LocalContentColor.current.copy(alpha = LocalContentAlpha.current)) {
+fun PegasusActionButtonLoadingIcon(tint: Color = LocalContentColor.current.copy(alpha = LocalContentAlpha.current)) {
     val infiniteTransition = rememberInfiniteTransition(label = "")
     val rotation by infiniteTransition.animateFloat(
         initialValue = 0F,
@@ -145,10 +235,10 @@ fun PegasusActionButtonIcon(
 
 
 @Composable
-fun RowScope.AppButtonText(
+fun RowScope.PegasusButtonText(
     description: String?,
     text: String,
-    elementsColor: Color = MaterialTheme.colorScheme.onPrimary,
+    elementsColor: Color,
     fontWeight: FontWeight = FontWeight.Bold
 ) {
     val commonTextModifier = Modifier.Companion
@@ -168,148 +258,138 @@ fun RowScope.AppButtonText(
 
 }
 
+//region Previews
+
 @Composable
-@Preview(name = "Sofia")
-@ShowkaseComposable(name = "Pegasus Action Button", group = "Buttons")
+@SofiaPreviews
+@ShowkaseComposable(name = "Pegasus Action Button Sofia", group = "Buttons", defaultStyle = true)
 fun PegasusActionButton_Sofia_Preview() {
     SofiaTheme {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(color = MaterialTheme.colorScheme.surface)
+                .background(color = PegasusThemeProvider.colorScheme.background)
         ) {
-            Box(modifier = Modifier.padding(16.dp)) {
-                PegasusActionButton(text = "This is a button, click me")
+            //Default Style
+            Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
+                PegasusActionButton(text = "Default Style")
             }
-        }
-    }
-}
 
-@Composable
-@Preview
-@ShowkaseComposable(name = "Pegasus Action Button", group = "Buttons")
-fun PegasusActionButton_Preview() {
-    PegasusTheme {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(color = MaterialTheme.colorScheme.surface)
-        ) {
-            Box(modifier = Modifier.padding(16.dp)) {
-                PegasusActionButton(text = "This is a button, click me")
-            }
-        }
-    }
-}
-
-
-@Composable
-@Preview(uiMode = UI_MODE_NIGHT_YES)
-@ShowkaseComposable(name = "Pegasus Action Button", group = "Buttons", styleName = "Dark")
-fun PegasusActionButton_Dark_Preview() {
-    PegasusTheme {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(color = MaterialTheme.colorScheme.surface)
-        ) {
-            Box(modifier = Modifier.padding(16.dp)) {
-                PegasusActionButton(text = "This is a button, click me")
-            }
-        }
-    }
-}
-
-@Composable
-@Preview
-@ShowkaseComposable(name = "Pegasus Action Button", group = "Buttons", styleName = "Icon Left")
-fun PegasusActionButton_Icon_Left_Preview() {
-    PegasusTheme {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(color = MaterialTheme.colorScheme.surface)
-        ) {
-            Box(modifier = Modifier.padding(16.dp)) {
-                PegasusActionButton(text = "This is a button, click me", iconLeft = {
+            //Icon Left Style
+            Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
+                PegasusActionButton(text = "With Icon Left", iconLeft = {
                     PegasusActionButtonIcon(Icons.Rounded.ShoppingCart)
                 })
             }
-        }
-    }
-}
 
-@Composable
-@Preview
-@ShowkaseComposable(name = "Pegasus Action Button", group = "Buttons", styleName = "Icon Right")
-fun PegasusActionButton_Icon_Right_Preview() {
-    PegasusTheme {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(color = MaterialTheme.colorScheme.surface)
-        ) {
+            //Icon Right Style
             Box(modifier = Modifier.padding(16.dp)) {
-                PegasusActionButton(text = "This is a button, click me", iconRight = {
+                PegasusActionButton(text = "With Icon Right", iconRight = {
                     PegasusActionButtonIcon(Icons.Rounded.ShoppingCart)
                 })
             }
-        }
-    }
-}
 
-
-@Composable
-@Preview
-@ShowkaseComposable(name = "Pegasus Action Button", group = "Buttons", styleName = "Both Icons")
-fun PegasusActionButton_Icons_Preview() {
-    PegasusTheme {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(color = MaterialTheme.colorScheme.surface)
-        ) {
-            Box(modifier = Modifier.padding(16.dp)) {
-                PegasusActionButton(text = "This is a button, click me",
-                    iconLeft = {
-                        PegasusActionButtonIcon(imageVector = Icons.Rounded.Save)
-                    },
-                    iconRight = {
-                        PegasusActionButtonIcon(Icons.Rounded.ShoppingCart)
-                    })
+            //Loading Style
+            var buttonStateForLoadingPreview by remember {
+                mutableStateOf(PegasusActionButtonState.ENABLED)
             }
-        }
-    }
-}
 
-
-@Composable
-@Preview
-@ShowkaseComposable(
-    name = "Pegasus Action Button",
-    group = "Buttons",
-    styleName = "Active to Loading Preview"
-)
-fun PegasusActionButton_Active_To_Loading_Preview() {
-    PegasusTheme {
-        var loading by remember {
-            mutableStateOf(false)
-        }
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(color = MaterialTheme.colorScheme.surface)
-        ) {
             Box(modifier = Modifier.padding(16.dp)) {
-                PegasusActionButton(text = "This is a button, click me",
+                PegasusActionButton(text = "Click me to start Loading",
                     iconLeft = {
                         PegasusActionButtonIcon(imageVector = Icons.Rounded.Save)
-                    }, loading = loading, onClick = {
-                        loading = loading.not()
+                    }, buttonState = buttonStateForLoadingPreview, onClickEnabled = {
+                        buttonStateForLoadingPreview =
+                            PegasusActionButtonState.LOADING
                     }
                 )
             }
+
+            var buttonStateForDisablePreview by remember {
+                mutableStateOf(PegasusActionButtonState.ENABLED)
+            }
+
+            //Disable Style
+            Box(modifier = Modifier.padding(16.dp)) {
+                PegasusActionButton(
+                    text = "Click me to disable",
+                    buttonState = buttonStateForDisablePreview,
+                    onClickEnabled = {
+                        buttonStateForDisablePreview = PegasusActionButtonState.DISABLED
+                    }
+                )
+            }
+
         }
     }
 }
 
+
+@Composable
+@SaraivaPreviews
+@ShowkaseComposable(name = "Pegasus Action Button Saraiva", group = "Buttons", defaultStyle = true)
+fun PegasusActionButton_Saraiva_Preview() {
+    SaraivaTheme {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(color = PegasusThemeProvider.colorScheme.background)
+        ) {
+            //Default Style
+            Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
+                PegasusActionButton(text = "Default Style")
+            }
+
+            //Icon Left Style
+            Box(modifier = Modifier.padding(16.dp)) {
+                PegasusActionButton(text = "With Icon Left", iconLeft = {
+                    PegasusActionButtonIcon(Icons.Rounded.ShoppingCart)
+                })
+            }
+
+            //Icon Right Style
+            Box(modifier = Modifier.padding(16.dp)) {
+                PegasusActionButton(text = "With Icon Right", iconRight = {
+                    PegasusActionButtonIcon(Icons.Rounded.ShoppingCart)
+                })
+            }
+
+            //Loading Style
+            var buttonStateForLoadingPreview by remember {
+                mutableStateOf(PegasusActionButtonState.ENABLED)
+            }
+
+            Box(modifier = Modifier.padding(16.dp)) {
+                PegasusActionButton(text = "Click me to start Loading",
+                    iconLeft = {
+                        PegasusActionButtonIcon(imageVector = Icons.Rounded.Save)
+                    }, buttonState = buttonStateForLoadingPreview, onClickEnabled = {
+                        buttonStateForLoadingPreview =
+                            PegasusActionButtonState.LOADING
+                    }
+                )
+            }
+
+            var buttonStateForDisablePreview by remember {
+                mutableStateOf(PegasusActionButtonState.ENABLED)
+            }
+
+            //Disable Style
+            Box(modifier = Modifier.padding(16.dp)) {
+                PegasusActionButton(
+                    text = "Click me to disable",
+                    buttonState = buttonStateForDisablePreview,
+                    onClickEnabled = {
+                        buttonStateForDisablePreview = PegasusActionButtonState.DISABLED
+                    }
+                )
+            }
+
+        }
+    }
+}
+
+
+
+
+//endregion Previews

@@ -24,7 +24,8 @@
     "downloadAndBuildAll": "node getTokens.mjs",
     "execStyleDictionary": "node execStyleDictionary.mjs",
     "runStyleDictionary": "node runStyleDictionary.mjs",
-    "runSofiaStyleDictionary": "node runSofiaStyleDictionary.mjs"
+    "sofiaStyleDictionary": "node sofiaStyleDictionary.mjs",
+    "saraivaStyleDictionary": "node saraivaStyleDictionary.mjs"
   },
   "dependencies": {
     "@tokens-studio/sd-transforms": "^0.9.8",

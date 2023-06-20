@@ -1,16 +1,16 @@
 
 
 // Do not edit directly
-// Generated on Mon, 19 Jun 2023 13:02:46 GMT
+// Generated on Mon, 19 Jun 2023 13:03:27 GMT
 
 
 
-package br.com.cogna.pegasusdesignsystemandroid.brands.sofia;
+package br.com.cogna.pegasusdesignsystemandroid.brands.saraiva;
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.*
 
-object SofiaPalette {
+object SaraivaPalette {
   val palette_error_0 = Color(0xFF000000)
   val palette_error_10 = Color(0xFF410e0b)
   val palette_error_100 = Color(0xFFffffff)
@@ -51,31 +51,31 @@ object SofiaPalette {
   val palette_neutrals_95 = Color(0xFFeff0f4)
   val palette_neutrals_99 = Color(0xFFfbfbff)
   val palette_primary_0 = Color(0xFF000000)
-  val palette_primary_10 = Color(0xFF001f50)
+  val palette_primary_10 = Color(0xFF231b3a)
   val palette_primary_100 = Color(0xFFffffff)
-  val palette_primary_20 = Color(0xFF002871)
-  val palette_primary_30 = Color(0xFF003491)
-  val palette_primary_40 = Color(0xFF0041af)
-  val palette_primary_50 = Color(0xFF004ecc)
-  val palette_primary_60 = Color(0xFF3969eb)
-  val palette_primary_70 = Color(0xFF7389ff)
-  val palette_primary_80 = Color(0xFFacb1ff)
-  val palette_primary_90 = Color(0xFFdadcff)
-  val palette_primary_95 = Color(0xFFeff0ff)
-  val palette_primary_99 = Color(0xFFf8f8ff)
+  val palette_primary_20 = Color(0xFF3d2e68)
+  val palette_primary_30 = Color(0xFF574583)
+  val palette_primary_40 = Color(0xFF746199)
+  val palette_primary_50 = Color(0xFF9484b0)
+  val palette_primary_60 = Color(0xFFa697bd)
+  val palette_primary_70 = Color(0xFFbcb2cd)
+  val palette_primary_80 = Color(0xFFd2cadc)
+  val palette_primary_90 = Color(0xFFe2dee8)
+  val palette_primary_95 = Color(0xFFf1eff4)
+  val palette_primary_99 = Color(0xFFfcfcfd)
   val palette_secondary_0 = Color(0xFF000000)
-  val palette_secondary_10 = Color(0xFF34170d)
+  val palette_secondary_10 = Color(0xFF0c2234)
   val palette_secondary_100 = Color(0xFFffffff)
-  val palette_secondary_20 = Color(0xFF641f10)
-  val palette_secondary_30 = Color(0xFF932b15)
-  val palette_secondary_40 = Color(0xFFc53a1d)
-  val palette_secondary_50 = Color(0xFFee4623)
-  val palette_secondary_60 = Color(0xFFff6d46)
-  val palette_secondary_70 = Color(0xFFff9c7c)
-  val palette_secondary_80 = Color(0xFFfebda9)
-  val palette_secondary_90 = Color(0xFFfcd8cc)
-  val palette_secondary_95 = Color(0xFFfcede9)
-  val palette_secondary_99 = Color(0xFFfefbfa)
+  val palette_secondary_20 = Color(0xFF0c3a5d)
+  val palette_secondary_30 = Color(0xFF125385)
+  val palette_secondary_40 = Color(0xFF125385)
+  val palette_secondary_50 = Color(0xFF1772b5)
+  val palette_secondary_60 = Color(0xFF3394e8)
+  val palette_secondary_70 = Color(0xFF5ba2eb)
+  val palette_secondary_80 = Color(0xFF90bcf0)
+  val palette_secondary_90 = Color(0xFFb7d0f2)
+  val palette_secondary_95 = Color(0xFFecf0f9)
+  val palette_secondary_99 = Color(0xFFfcfcfd)
   val palette_success_0 = Color(0xFF000000)
   val palette_success_10 = Color(0xFF00392b)
   val palette_success_100 = Color(0xFFffffff)

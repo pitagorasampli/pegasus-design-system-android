@@ -1,7 +1,7 @@
 
 
 // Do not edit directly
-// Generated on Wed, 14 Jun 2023 14:46:01 GMT
+// Generated on Mon, 19 Jun 2023 13:02:46 GMT
 
 
 
@@ -9,9 +9,8 @@ package br.com.cogna.pegasusdesignsystemandroid.brands.sofia;
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.*
-import com.airbnb.android.showkase.annotation.ShowkaseColor
 
-object SofiaScheme {
+object SofiaSchemes {
   val sofia_color_light_alert_error = Color(0xFF8c1d18)
   val sofia_color_light_alert_error_container = Color(0xFFfceeee)
   val sofia_color_light_alert_info = Color(0xFF574583)
@@ -39,8 +38,6 @@ object SofiaScheme {
   val sofia_color_light_brand_primary_container = Color(0xFFeff0ff)
   val sofia_color_light_brand_primary_dark = Color(0xFF002871)
   val sofia_color_light_brand_primary_light = Color(0xFF004ecc)
-
-  @ShowkaseColor(name = "Primary Light Color", group = "Sofia Brand Primary")
   val sofia_color_light_brand_primary_main = Color(0xFF0041af)
   val sofia_color_light_brand_secondary_container = Color(0xFFfcede9)
   val sofia_color_light_brand_secondary_dark = Color(0xFF641f10)

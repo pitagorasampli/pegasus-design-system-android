@@ -46,3 +46,16 @@ fun PegasusTheme(
         content = content
     )
 }
+
+@Composable
+fun StatusBarColor(colorInArgb: Int, darkTheme: Boolean) {
+    val view = LocalView.current
+    if (!view.isInEditMode) {
+        SideEffect {
+            val window = (view.context as Activity).window
+            window.statusBarColor = colorInArgb
+            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars =
+                darkTheme
+        }
+    }
+}
