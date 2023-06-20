@@ -25,7 +25,7 @@ object SaraivaSpacing {
   val spacing_3 = 4.dp
   val spacing_4 = 8.dp
   val spacing_5 = 12.dp
-  val spacing_6 = 116.dp
+  val spacing_6 = 16.dp
   val spacing_7 = 20.dp
   val spacing_8 = 24.dp
   val spacing_9 = 32.dp
