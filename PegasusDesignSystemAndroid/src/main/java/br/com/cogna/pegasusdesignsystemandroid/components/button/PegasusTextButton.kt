@@ -23,6 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme.SaraivaTheme
 import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.SofiaPreviews
 import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.SofiaTheme
 import br.com.cogna.pegasusdesignsystemandroid.components.theme.PegasusThemeProvider
@@ -173,4 +174,52 @@ fun PegasusTextButton_Sofia_Preview() {
     }
 }
 
+@Composable
+@SofiaPreviews
+@ShowkaseComposable(name = "Pegasus Text Button Sofia", group = "Buttons", defaultStyle = true)
+fun PegasusTextButton_Saraiva_Preview() {
+    SaraivaTheme {
+        var buttonState by remember {
+            mutableStateOf(PegasusTextButtonState.ENABLED)
+        }
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(color = PegasusThemeProvider.colorScheme.background)
+        ) {
+            //Default Style
+            Box(modifier = Modifier.padding(16.dp)) {
+                PegasusTextButton(text = "Click me button", onClickEnabled = {})
+            }
+
+            Divider()
+
+            //Disable with icon left Style
+            Box(modifier = Modifier.padding(16.dp)) {
+                PegasusTextButton(text = "Click To Disable me",
+                    iconLeft = {
+                        PegasusActionButtonIcon(imageVector = Icons.Default.SwapHoriz)
+                    },
+                    buttonState = buttonState,
+                    onClickEnabled = {
+                        buttonState = PegasusTextButtonState.DISABLED
+                    })
+            }
+
+            Divider()
+
+            //Disable with icon right Style
+            Box(modifier = Modifier.padding(16.dp)) {
+                PegasusTextButton(text = "Click To Disable me",
+                    iconRight = {
+                        PegasusActionButtonIcon(imageVector = Icons.Default.SwapHoriz)
+                    },
+                    buttonState = buttonState,
+                    onClickEnabled = {
+                        buttonState = PegasusTextButtonState.DISABLED
+                    })
+            }
+        }
+    }
+}
 //endregion Sofia Previews

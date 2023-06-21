@@ -1,5 +1,5 @@
 
-package br.com.cogna.pegasusdesignsystemandroid.brands.Saraiva
+package br.com.cogna.pegasusdesignsystemandroid.brands.saraiva
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp

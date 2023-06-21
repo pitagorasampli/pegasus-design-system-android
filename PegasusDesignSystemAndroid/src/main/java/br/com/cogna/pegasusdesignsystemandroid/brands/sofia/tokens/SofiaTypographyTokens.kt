@@ -79,72 +79,84 @@ val typography_desktop_caption  = TextStyle(
 )
 
 val typography_mobile_display_large  = TextStyle(
+   fontFamily = SofiaFontFamilyTokens.Montserrat,
    fontWeight = FontWeight(500),
    fontSize = 72.sp,
    lineHeight = 22.sp,
 )
 
 val typography_mobile_display_medium  = TextStyle(
+   fontFamily = SofiaFontFamilyTokens.Montserrat,
    fontWeight = FontWeight(500),
    fontSize = 64.sp,
    lineHeight = 19.sp,
 )
 
 val typography_mobile_display_small  = TextStyle(
+   fontFamily = SofiaFontFamilyTokens.Montserrat,
    fontWeight = FontWeight(500),
    fontSize = 48.sp,
    lineHeight = 19.sp,
 )
 
 val typography_mobile_headline_large  = TextStyle(
+   fontFamily = SofiaFontFamilyTokens.Montserrat,
    fontWeight = FontWeight(600),
    fontSize = 48.sp,
    lineHeight = 19.sp,
 )
 
 val typography_mobile_headline_medium  = TextStyle(
+   fontFamily = SofiaFontFamilyTokens.Montserrat,
    fontWeight = FontWeight(600),
    fontSize = 40.sp,
    lineHeight = 19.sp,
 )
 
 val typography_mobile_headline_small  = TextStyle(
+   fontFamily = SofiaFontFamilyTokens.Montserrat,
    fontWeight = FontWeight(600),
    fontSize = 32.sp,
    lineHeight = 19.sp,
 )
 
 val typography_mobile_title_large  = TextStyle(
+   fontFamily = SofiaFontFamilyTokens.Montserrat,
    fontWeight = FontWeight(700),
    fontSize = 32.sp,
    lineHeight = 19.sp,
 )
 
 val typography_mobile_title_medium  = TextStyle(
+   fontFamily = SofiaFontFamilyTokens.Montserrat,
    fontWeight = FontWeight(600),
    fontSize = 24.sp,
    lineHeight = 19.sp,
 )
 
 val typography_mobile_title_small  = TextStyle(
+   fontFamily = SofiaFontFamilyTokens.Montserrat,
    fontWeight = FontWeight(600),
    fontSize = 20.sp,
    lineHeight = 19.sp,
 )
 
 val typography_mobile_body_large  = TextStyle(
+   fontFamily = SofiaFontFamilyTokens.Montserrat,
    fontWeight = FontWeight(400),
    fontSize = 16.sp,
    lineHeight = 22.sp,
 )
 
 val typography_mobile_body_medium  = TextStyle(
+   fontFamily = SofiaFontFamilyTokens.Montserrat,
    fontWeight = FontWeight(400),
    fontSize = 14.sp,
    lineHeight = 22.sp,
 )
 
 val typography_mobile_caption  = TextStyle(
+   fontFamily = SofiaFontFamilyTokens.Montserrat,
    fontWeight = FontWeight(400),
    fontSize = 12.sp,
    lineHeight = 19.sp,

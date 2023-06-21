@@ -1,7 +1,7 @@
 package br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme
 
 import androidx.compose.material3.Typography
-import br.com.cogna.pegasusdesignsystemandroid.brands.Saraiva.SaraivaTypography
+import br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.SaraivaTypography
 
 
 val saraivaTypography = Typography(
