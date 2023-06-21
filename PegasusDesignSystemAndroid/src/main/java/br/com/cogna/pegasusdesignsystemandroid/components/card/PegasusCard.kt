@@ -12,6 +12,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.SofiaPreviews
 import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.SofiaTheme
+import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.tokens.SofiaSpacingTokens
 import com.airbnb.android.showkase.annotation.ShowkaseComposable
 
 @Composable
@@ -31,7 +32,7 @@ fun PegasusPrimaryCard(modifier: Modifier, content: @Composable () -> Unit) {
 fun PegasusPrimaryCard_Sofia_Preview() {
     SofiaTheme {
         Column(modifier = Modifier.background(color = MaterialTheme.colorScheme.background)) {
-            PegasusPrimaryCard(modifier = Modifier.padding(SofiaSpacing.spacing_6)) {
+            PegasusPrimaryCard(modifier = Modifier.padding(SofiaSpacingTokens.spacing_6)) {
                 Column(modifier = Modifier.padding(16.dp)) {
                     Text(
                         style = MaterialTheme.typography.bodyLarge.copy(
