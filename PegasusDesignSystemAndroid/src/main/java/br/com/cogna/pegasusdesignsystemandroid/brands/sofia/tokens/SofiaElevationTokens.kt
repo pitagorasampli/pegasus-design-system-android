@@ -1,16 +1,16 @@
 
 
 // Do not edit directly
-// Generated on Mon, 19 Jun 2023 13:02:46 GMT
+// Generated on Wed, 21 Jun 2023 01:17:19 GMT
 
 
 
-package br.com.cogna.pegasusdesignsystemandroid.brands.sofia;
+package br.com.cogna.pegasusdesignsystemandroid.brands.sofia.tokens;
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.*
 
-object SofiaElevation {
+object SofiaElevationTokens {
   val elevation_1 = 1.dp
   val elevation_2 = 1.dp
 }

@@ -10,17 +10,18 @@ import { composeTransformUtils } from './composeTransformUtils.mjs'
 
 const styleDictionary = StyleDictionary.extend(config);
 
-composeTransformUtils("Saraiva", styleDictionary)
+const brandName = "Saraiva"
+composeTransformUtils(brandName, styleDictionary)
 styleDictionary.buildAllPlatforms();
 
-const borderFilePath = 'pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/brands/saraiva/SaraivaBorders.kt';
+const borderFilePath = 'pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/brands/saraiva/tokens/SaraivaBorderTokens.kt';
 const borderSearchString = 'object';
 const borderLineToAdd = 'import androidx.compose.foundation.shape.RoundedCornerShape\n';
 
 composeFileUtils.addLineBeforeStringOnFile(borderFilePath, borderSearchString, borderLineToAdd)
 
 
-const fontWeightFilePath = 'pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/brands/saraiva/SaraivaFontWeight.kt';
+const fontWeightFilePath = 'pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/brands/saraiva/tokens/SaraivaFontWeightTokens.kt';
 const fontWeightSearchString = 'object';
 const fontWeightLineToAdd = 'import androidx.compose.ui.text.font.FontWeight\n';
 

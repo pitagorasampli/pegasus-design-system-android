@@ -10,17 +10,18 @@ import { composeTransformUtils } from './composeTransformUtils.mjs'
 
 const styleDictionary = StyleDictionary.extend(config);
 
-composeTransformUtils("Sofia", styleDictionary)
+const brandName = "Sofia"
+composeTransformUtils(brandName, styleDictionary)
 styleDictionary.buildAllPlatforms();
 
-const borderFilePath = 'pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/brands/sofia/SofiaBorders.kt';
+const borderFilePath = 'pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/brands/sofia/tokens/SofiaBorderTokens.kt';
 const borderSearchString = 'object';
 const borderLineToAdd = 'import androidx.compose.foundation.shape.RoundedCornerShape\n';
 
 composeFileUtils.addLineBeforeStringOnFile(borderFilePath, borderSearchString, borderLineToAdd)
 
 
-const fontWeightFilePath = 'pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/brands/sofia/SofiaFontWeight.kt';
+const fontWeightFilePath = 'pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/brands/sofia/tokens/SofiaFontWeightTokens.kt';
 const fontWeightSearchString = 'object';
 const fontWeightLineToAdd = 'import androidx.compose.ui.text.font.FontWeight\n';
 

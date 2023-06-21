@@ -95,12 +95,12 @@ styleDictionary.registerFormat({
                    name: 'compose/typography',
                    formatter: function (dictionary, config) {
                      return `
-package br.com.cogna.pegasusdesignsystemandroid.brands.${brandName.toLowerCase()}
+package br.com.cogna.pegasusdesignsystemandroid.brands.${brandName.toLowerCase()}.tokens
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-object ${brandName}Typography{
+object ${brandName}TypographyTokens{
 ${dictionary.allProperties
   .map((prop) => {
     return `

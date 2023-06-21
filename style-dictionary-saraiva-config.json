@@ -16,13 +16,13 @@
         "size/px_to_sp"
       ],
       "transformGroup": "compose",
-      "buildPath": "pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/brands/saraiva/",
+      "buildPath": "pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/brands/saraiva/tokens/",
       "files": [
         {
           "destination": "SaraivaPalette.kt",
           "format": "compose/object",
           "className": "SaraivaPalette",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens",
           "filter": {
             "attributes": {
               "category": "palette"
@@ -34,7 +34,7 @@
           "destination": "SaraivaSchemes.kt",
           "format": "compose/object",
           "className": "SaraivaSchemes",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens",
           "filter": {
             "attributes": {
               "type": "color"
@@ -46,7 +46,7 @@
           "destination": "SaraivaSpacing.kt",
           "format": "compose/object",
           "className": "SaraivaSpacing",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens",
           "type": "float",
           "filter": {
             "attributes": {
@@ -59,7 +59,7 @@
           "destination": "SaraivaBorders.kt",
           "format": "compose/object",
           "className": "SaraivaBorders",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens",
           "type": "float",
           "filter": {
             "attributes": {
@@ -72,7 +72,7 @@
           "destination": "SaraivaElevation.kt",
           "format": "compose/object",
           "className": "SaraivaElevation",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens",
           "filter": {
             "attributes": {
               "category": "elevation"
@@ -84,7 +84,7 @@
           "destination": "SaraivaFontSizes.kt",
           "format": "compose/object",
           "className": "SaraivaFontSizes",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens",
           "filter": {
             "attributes": {
               "category": "fontSize"
@@ -96,7 +96,7 @@
           "destination": "SaraivaLineHeight.kt",
           "format": "compose/object",
           "className": "SaraivaLineHeight",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens",
           "filter": {
             "attributes": {
               "category": "lineHeight"
@@ -108,7 +108,7 @@
           "destination": "SaraivaFontFamily.kt",
           "format": "compose/object",
           "className": "SaraivaFontFamily",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens",
           "options": {
             "outputReferences": true
           },
@@ -123,7 +123,7 @@
           "destination": "SaraivaFontWeight.kt",
           "format": "compose/object",
           "className": "SaraivaFontWeight",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens",
           "type": "float",
           "options": {
             "outputReferences": true
@@ -139,7 +139,7 @@
           "destination": "SaraivaTypography.kt",
           "format": "compose/typography",
           "className": "SaraivaTypography",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens",
           "options": {
             "outputReferences": true
           },

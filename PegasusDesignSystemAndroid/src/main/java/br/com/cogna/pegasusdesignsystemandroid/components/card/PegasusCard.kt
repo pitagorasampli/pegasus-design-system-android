@@ -10,10 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.SofiaSpacing
 import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.SofiaPreviews
 import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.SofiaTheme
-import br.com.cogna.pegasusdesignsystemandroid.components.theme.PegasusTheme
 import com.airbnb.android.showkase.annotation.ShowkaseComposable
 
 @Composable

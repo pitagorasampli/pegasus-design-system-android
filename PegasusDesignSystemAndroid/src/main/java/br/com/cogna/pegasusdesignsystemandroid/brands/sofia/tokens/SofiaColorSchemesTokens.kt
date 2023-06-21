@@ -1,16 +1,16 @@
 
 
 // Do not edit directly
-// Generated on Mon, 19 Jun 2023 13:02:46 GMT
+// Generated on Wed, 21 Jun 2023 01:17:19 GMT
 
 
 
-package br.com.cogna.pegasusdesignsystemandroid.brands.sofia;
+package br.com.cogna.pegasusdesignsystemandroid.brands.sofia.tokens;
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.*
 
-object SofiaSchemes {
+object SofiaColorSchemesTokens {
   val sofia_color_light_alert_error = Color(0xFF8c1d18)
   val sofia_color_light_alert_error_container = Color(0xFFfceeee)
   val sofia_color_light_alert_info = Color(0xFF574583)

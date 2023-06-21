@@ -16,13 +16,13 @@
         "size/px_to_sp"
       ],
       "transformGroup": "compose",
-      "buildPath": "pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/brands/sofia/",
+      "buildPath": "pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/brands/sofia/tokens/",
       "files": [
         {
-          "destination": "SofiaPalette.kt",
+          "destination": "SofiaPaletteTokens.kt",
           "format": "compose/object",
-          "className": "SofiaPalette",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia",
+          "className": "SofiaPaletteTokens",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia.tokens",
           "filter": {
             "attributes": {
               "category": "palette"
@@ -31,10 +31,10 @@
         },
 
         {
-          "destination": "SofiaSchemes.kt",
+          "destination": "SofiaColorSchemesTokens.kt",
           "format": "compose/object",
-          "className": "SofiaSchemes",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia",
+          "className": "SofiaColorSchemesTokens",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia.tokens",
           "filter": {
             "attributes": {
               "type": "color"
@@ -43,10 +43,10 @@
         },
 
         {
-          "destination": "SofiaSpacing.kt",
+          "destination": "SofiaSpacingTokens.kt",
           "format": "compose/object",
-          "className": "SofiaSpacing",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia",
+          "className": "SofiaSpacingTokens",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia.tokens",
           "type": "float",
           "filter": {
             "attributes": {
@@ -56,10 +56,10 @@
         },
 
         {
-          "destination": "SofiaBorders.kt",
+          "destination": "SofiaBorderTokens.kt",
           "format": "compose/object",
-          "className": "SofiaBorders",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia",
+          "className": "SofiaBorderTokens",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia.tokens",
           "type": "float",
           "filter": {
             "attributes": {
@@ -69,10 +69,10 @@
         },
 
         {
-          "destination": "SofiaElevation.kt",
+          "destination": "SofiaElevationTokens.kt",
           "format": "compose/object",
-          "className": "SofiaElevation",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia",
+          "className": "SofiaElevationTokens",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia.tokens",
           "filter": {
             "attributes": {
               "category": "elevation"
@@ -81,10 +81,10 @@
         },
 
         {
-          "destination": "SofiaFontSizes.kt",
+          "destination": "SofiaFontSizeTokens.kt",
           "format": "compose/object",
-          "className": "SofiaFontSizes",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia",
+          "className": "SofiaFontSizeTokens",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia.tokens",
           "filter": {
             "attributes": {
               "category": "fontSize"
@@ -93,10 +93,10 @@
         },
 
         {
-          "destination": "SofiaLineHeight.kt",
+          "destination": "SofiaLineHeightTokens.kt",
           "format": "compose/object",
-          "className": "SofiaLineHeight",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia",
+          "className": "SofiaLineHeightTokens",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia.tokens",
           "filter": {
             "attributes": {
               "category": "lineHeight"
@@ -105,10 +105,10 @@
         },
 
         {
-          "destination": "SofiaFontFamily.kt",
+          "destination": "SofiaFontFamilyTokens.kt",
           "format": "compose/object",
-          "className": "SofiaFontFamily",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia",
+          "className": "SofiaFontFamilyTokens",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia.tokens",
           "options": {
             "outputReferences": true
           },
@@ -120,10 +120,10 @@
         },
 
         {
-          "destination": "SofiaFontWeight.kt",
+          "destination": "SofiaFontWeightTokens.kt",
           "format": "compose/object",
-          "className": "SofiaFontWeight",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia",
+          "className": "SofiaFontWeightTokens",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia.tokens",
           "type": "float",
           "options": {
             "outputReferences": true
@@ -136,10 +136,10 @@
         },
 
         {
-          "destination": "SofiaTypography.kt",
+          "destination": "SofiaTypographyTokens.kt",
           "format": "compose/typography",
-          "className": "SofiaTypography",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia",
+          "className": "SofiaTypographyTokens",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia.tokens",
           "options": {
             "outputReferences": true
           },
