@@ -82,14 +82,14 @@ val typography_mobile_display_large  = TextStyle(
    fontFamily = SofiaFontFamilyTokens.Montserrat,
    fontWeight = FontWeight(500),
    fontSize = 72.sp,
-   lineHeight = 22.sp,
+   lineHeight = 100.sp,
 )
 
 val typography_mobile_display_medium  = TextStyle(
    fontFamily = SofiaFontFamilyTokens.Montserrat,
    fontWeight = FontWeight(500),
    fontSize = 64.sp,
-   lineHeight = 19.sp,
+   lineHeight = 89.sp,
 )
 
 val typography_mobile_display_small  = TextStyle(

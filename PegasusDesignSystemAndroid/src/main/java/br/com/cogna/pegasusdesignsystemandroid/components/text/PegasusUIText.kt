@@ -29,7 +29,7 @@ fun PegasusUIText_Sofia_Preview() {
             Column(modifier = Modifier.padding(16.dp)) {
                 PegasusUIText(
                     text = "displayLarge",
-                    textStyle = MaterialTheme.typography.displayLarge
+                    textStyle = MaterialTheme.typography.displayLarge.copy()
                 )
 
                 Spacer(modifier = Modifier.height(16.dp))

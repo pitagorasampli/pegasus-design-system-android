@@ -22,6 +22,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme.SaraivaTheme
 import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.SofiaPreviews
@@ -175,6 +177,13 @@ fun PegasusTextButton_Sofia_Preview() {
 }
 
 @Composable
+fun Dp.dpToPx() = with(LocalDensity.current) { this@dpToPx.toPx() }
+
+
+@Composable
+fun Int.pxToDp() = with(LocalDensity.current) { this@pxToDp.toDp() }
+
+@Composable
 @SofiaPreviews
 @ShowkaseComposable(name = "Pegasus Text Button Sofia", group = "Buttons", defaultStyle = true)
 fun PegasusTextButton_Saraiva_Preview() {
@@ -182,6 +191,7 @@ fun PegasusTextButton_Saraiva_Preview() {
         var buttonState by remember {
             mutableStateOf(PegasusTextButtonState.ENABLED)
         }
+
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -189,7 +199,7 @@ fun PegasusTextButton_Saraiva_Preview() {
         ) {
             //Default Style
             Box(modifier = Modifier.padding(16.dp)) {
-                PegasusTextButton(text = "Click me button", onClickEnabled = {})
+                PegasusTextButton(text = "Click me Text Button", onClickEnabled = {})
             }
 
             Divider()
