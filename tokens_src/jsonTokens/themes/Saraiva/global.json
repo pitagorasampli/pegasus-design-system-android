@@ -495,23 +495,23 @@
   },
   "lineHeight": {
     "xs": {
-      "value": "18px",
+      "value": "115%",
       "type": "lineHeights"
     },
     "sm": {
-      "value": "19px",
+      "value": "120%",
       "type": "lineHeights"
     },
     "md": {
-      "value": "22px",
+      "value": "140%",
       "type": "lineHeights"
     },
     "lg": {
-      "value": "23px",
+      "value": "148%",
       "type": "lineHeights"
     },
     "xl": {
-      "value": "26px",
+      "value": "168%",
       "type": "lineHeights"
     }
   },

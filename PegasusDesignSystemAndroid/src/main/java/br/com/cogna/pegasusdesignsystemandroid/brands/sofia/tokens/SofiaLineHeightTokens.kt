@@ -1,7 +1,7 @@
 
 
 // Do not edit directly
-// Generated on Wed, 21 Jun 2023 01:17:19 GMT
+// Generated on Fri, 23 Jun 2023 04:04:45 GMT
 
 
 
@@ -11,9 +11,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.*
 
 object SofiaLineHeightTokens {
-  val line_height_lg = 23.sp
-  val line_height_md = 22.sp
-  val line_height_sm = 19.sp
-  val line_height_xl = 26.sp
-  val line_height_xs = 18.sp
+  val line_height_lg = 1.48
+  val line_height_md = 1.4
+  val line_height_sm = 1.2
+  val line_height_xl = 1.68
+  val line_height_xs = 1.15
 }

@@ -52,7 +52,7 @@ styleDictionary.registerTransform({
                  name: 'size/px_to_sp',
                  type: 'value',
                  transitive: true,
-                 matcher: token => ['fontSizes', 'lineHeights'].includes(token.type),
+                 matcher: token => ['fontSizes'].includes(token.type),
                  transformer: function(token)  {
                     if (token.value.endsWith('px')) {
                       const dimen = transformDimension(token.value);
@@ -63,6 +63,17 @@ styleDictionary.registerTransform({
                     } else {
                       return token.value;
                   }
+                 }
+});
+
+styleDictionary.registerTransform({
+                 name: 'size/composeLineHeight',
+                 type: 'value',
+                 transitive: true,
+                 matcher: token => ['lineHeights'].includes(token.type),
+                 transformer: function(token)  {
+                  // Return the float value
+                  return token.value.replace("%", "") / 100;
                  }
 });
 
@@ -87,9 +98,12 @@ styleDictionary.registerTransform({
                  return prop.attributes.category === 'fontFamily';
                  },
                  transformer: function(token)  {
-                   return `"${token.value}"`;
+                 const fontInLowerCase = token.value.toLowerCase()
+                 const fontFamily = `FontFamily(Font(R.font.${fontInLowerCase}_regular))`
+                 return fontFamily;
                  }
 });
+
 
 styleDictionary.registerFormat({
                    name: 'compose/typography',
@@ -103,11 +117,14 @@ import androidx.compose.ui.unit.sp
 object ${brandName}TypographyTokens{
 ${dictionary.allProperties
   .map((prop) => {
+   const  fontSizeValue =  String(prop.value.fontSize).replace("sp", "");
+    const lineHeight = prop.value.lineHeight * fontSizeValue;
+    const lineHeightRounded = Math.ceil(lineHeight)
     return `
 val ${prop.name}  = TextStyle(
    fontWeight = ${prop.value.fontWeight},
    fontSize = ${prop.value.fontSize},
-   lineHeight = ${prop.value.lineHeight},
+   lineHeight = ${lineHeightRounded}.sp,
 )`})
   .join('\n')}
 }
