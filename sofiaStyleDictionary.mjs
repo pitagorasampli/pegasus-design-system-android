@@ -36,3 +36,10 @@ const fontFamilyFontImport = 'import androidx.compose.ui.text.font.Font\n'
 composeFileUtils.addLineBeforeStringOnFile(fontFamilyFilePath, fontFamilySearchString, fontFamilyImportR)
 composeFileUtils.addLineBeforeStringOnFile(fontFamilyFilePath, fontFamilySearchString, fontFamilyFontFamilyImport )
 composeFileUtils.addLineBeforeStringOnFile(fontFamilyFilePath, fontFamilySearchString, fontFamilyFontImport )
+
+
+const typographyFilePath = 'pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/brands/sofia/tokens/SofiaTypographyTokens.kt';
+
+composeFileUtils.addLineBeforeStringOnFile(typographyFilePath, fontFamilySearchString, fontFamilyImportR)
+composeFileUtils.addLineBeforeStringOnFile(typographyFilePath, fontFamilySearchString, fontFamilyFontFamilyImport )
+composeFileUtils.addLineBeforeStringOnFile(typographyFilePath, fontFamilySearchString, fontFamilyFontImport )

@@ -122,6 +122,7 @@ ${dictionary.allProperties
     const lineHeightRounded = Math.ceil(lineHeight)
     return `
 val ${prop.name}  = TextStyle(
+   fontFamily = ${prop.value.fontFamily},
    fontWeight = ${prop.value.fontWeight},
    fontSize = ${prop.value.fontSize},
    lineHeight = ${lineHeightRounded}.sp,
