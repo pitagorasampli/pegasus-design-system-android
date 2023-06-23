@@ -1,16 +1,16 @@
 
 
 // Do not edit directly
-// Generated on Mon, 19 Jun 2023 13:03:27 GMT
+// Generated on Fri, 23 Jun 2023 17:26:53 GMT
 
 
 
-package br.com.cogna.pegasusdesignsystemandroid.brands.saraiva;
+package br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens;
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.*
 
-object SaraivaSpacing {
+object SaraivaSpacingTokens {
   val spacing_0 = 0.dp
   val spacing_1 = 1.dp
   val spacing_10 = 40.dp

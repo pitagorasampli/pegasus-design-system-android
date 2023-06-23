@@ -1,18 +1,18 @@
 
 
 // Do not edit directly
-// Generated on Mon, 19 Jun 2023 13:03:27 GMT
+// Generated on Fri, 23 Jun 2023 17:26:53 GMT
 
 
 
-package br.com.cogna.pegasusdesignsystemandroid.brands.saraiva;
+package br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens;
 
-import androidx.compose.ui.graphics.Color
+
 import androidx.compose.ui.unit.*
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 
-object SaraivaBorders {
+object SaraivaBorderTokens {
   val border_radius_circle = RoundedCornerShape(50)
   val border_radius_lg = 16.dp
   val border_radius_md = 12.dp

@@ -1,16 +1,16 @@
 
 
 // Do not edit directly
-// Generated on Mon, 19 Jun 2023 13:03:27 GMT
+// Generated on Fri, 23 Jun 2023 17:26:53 GMT
 
 
 
-package br.com.cogna.pegasusdesignsystemandroid.brands.saraiva;
+package br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens;
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.*
 
-object SaraivaSchemes {
+object SaraivaColorSchemesTokens {
   val saraiva_color_light_alert_error = Color(0xFF8c1d18)
   val saraiva_color_light_alert_error_container = Color(0xFFfceeee)
   val saraiva_color_light_alert_info = Color(0xFF574583)

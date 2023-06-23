@@ -1,18 +1,18 @@
 
 
 // Do not edit directly
-// Generated on Mon, 19 Jun 2023 13:03:27 GMT
+// Generated on Fri, 23 Jun 2023 17:26:53 GMT
 
 
 
-package br.com.cogna.pegasusdesignsystemandroid.brands.saraiva;
+package br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens;
 
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.*
+
+
 
 import androidx.compose.ui.text.font.FontWeight
 
-object SaraivaFontWeight {
+object SaraivaFontWeightTokens {
   val font_weight_black = FontWeight(900)
   val font_weight_bold = FontWeight(700)
   val font_weight_semibold = FontWeight(600)
