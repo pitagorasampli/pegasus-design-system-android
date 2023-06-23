@@ -1,14 +1,14 @@
 
 
 // Do not edit directly
-// Generated on Fri, 23 Jun 2023 04:10:38 GMT
+// Generated on Fri, 23 Jun 2023 05:01:51 GMT
 
 
 
 package br.com.cogna.pegasusdesignsystemandroid.brands.sofia.tokens;
 
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.*
+
+
 
 import br.com.cogna.pegasusdesignsystemandroid.R
 import androidx.compose.ui.text.font.FontFamily
