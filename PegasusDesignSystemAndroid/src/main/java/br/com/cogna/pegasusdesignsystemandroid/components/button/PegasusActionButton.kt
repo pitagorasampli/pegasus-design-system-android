@@ -26,7 +26,6 @@ import androidx.compose.material.icons.rounded.Save
 import androidx.compose.material.icons.rounded.ShoppingCart
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -42,10 +41,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme.SaraivaPreviews
 import br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme.SaraivaTheme
-import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.LocalPegasusSpacingComposition
 import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.SofiaPreviews
 import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.SofiaTheme
-import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.sofiaSpacing
 import br.com.cogna.pegasusdesignsystemandroid.components.theme.PegasusThemeProvider
 import com.airbnb.android.showkase.annotation.ShowkaseComposable
 
@@ -189,7 +186,8 @@ fun PegasusActionButtonLoading(
         ) {
             Row(
                 horizontalArrangement = Arrangement.Center, modifier = modifier.padding(
-                    start = 16.dp, end = 16.dp, top = 16.dp, bottom = 16.dp
+                    horizontal = PegasusThemeProvider.spacing.spacing7,
+                    vertical = PegasusThemeProvider.spacing.spacing4,
                 )
             ) {
                 PegasusActionButtonLoadingIcon()
@@ -388,8 +386,6 @@ fun PegasusActionButton_Saraiva_Preview() {
         }
     }
 }
-
-
 
 
 //endregion Previews
