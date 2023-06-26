@@ -22,8 +22,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme.SaraivaTheme
 import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.SofiaPreviews
@@ -108,7 +106,7 @@ fun PegasusTextButtonEnabled(
         ) {
             Row(
                 horizontalArrangement = Arrangement.Center, modifier = modifier.padding(
-                    start = 16.dp, end = 16.dp, top = 16.dp, bottom = 16.dp
+                    PegasusThemeProvider.spacing.spacing6
                 )
             ) {
                 iconLeft?.invoke()
@@ -141,14 +139,14 @@ fun PegasusTextButton_Sofia_Preview() {
                 .background(color = PegasusThemeProvider.colorScheme.background)
         ) {
             //Default Style
-            Box(modifier = Modifier.padding(16.dp)) {
+            Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
                 PegasusTextButton(text = "Click me button", onClickEnabled = {})
             }
 
             Divider()
 
             //Disable with icon left Style
-            Box(modifier = Modifier.padding(16.dp)) {
+            Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
                 PegasusTextButton(text = "Click To Disable me",
                     iconLeft = {
                         PegasusActionButtonIcon(imageVector = Icons.Default.SwapHoriz)
@@ -162,7 +160,7 @@ fun PegasusTextButton_Sofia_Preview() {
             Divider()
 
             //Disable with icon right Style
-            Box(modifier = Modifier.padding(16.dp)) {
+            Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
                 PegasusTextButton(text = "Click To Disable me",
                     iconRight = {
                         PegasusActionButtonIcon(imageVector = Icons.Default.SwapHoriz)
@@ -175,13 +173,6 @@ fun PegasusTextButton_Sofia_Preview() {
         }
     }
 }
-
-@Composable
-fun Dp.dpToPx() = with(LocalDensity.current) { this@dpToPx.toPx() }
-
-
-@Composable
-fun Int.pxToDp() = with(LocalDensity.current) { this@pxToDp.toDp() }
 
 @Composable
 @SofiaPreviews
@@ -198,14 +189,14 @@ fun PegasusTextButton_Saraiva_Preview() {
                 .background(color = PegasusThemeProvider.colorScheme.background)
         ) {
             //Default Style
-            Box(modifier = Modifier.padding(16.dp)) {
+            Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
                 PegasusTextButton(text = "Click me Text Button", onClickEnabled = {})
             }
 
             Divider()
 
             //Disable with icon left Style
-            Box(modifier = Modifier.padding(16.dp)) {
+            Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
                 PegasusTextButton(text = "Click To Disable me",
                     iconLeft = {
                         PegasusActionButtonIcon(imageVector = Icons.Default.SwapHoriz)
@@ -219,7 +210,7 @@ fun PegasusTextButton_Saraiva_Preview() {
             Divider()
 
             //Disable with icon right Style
-            Box(modifier = Modifier.padding(16.dp)) {
+            Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
                 PegasusTextButton(text = "Click To Disable me",
                     iconRight = {
                         PegasusActionButtonIcon(imageVector = Icons.Default.SwapHoriz)

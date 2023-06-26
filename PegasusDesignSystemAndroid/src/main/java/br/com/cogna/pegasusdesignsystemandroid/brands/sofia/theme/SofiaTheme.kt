@@ -7,24 +7,27 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
-import br.com.cogna.pegasusdesignsystemandroid.components.colors.PegasusColorsScheme
-import br.com.cogna.pegasusdesignsystemandroid.components.spacing.PegasusSpacing
+import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.border_stroke.sofiaBorderStrokes
+import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.color.sofiaDarkSchemeColors
+import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.color.sofiaLightSchemeColors
+import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.font.sofiaFontWeight
+import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.shapes.sofiaBorderRadius
+import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.shapes.sofiaShapes
+import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.spacing.sofiaSpacing
+import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.typography.sofiaTypography
+import br.com.cogna.pegasusdesignsystemandroid.components.theme.LocalPegasusBorderRadiusComposition
+import br.com.cogna.pegasusdesignsystemandroid.components.theme.LocalPegasusBorderStrokeComposition
+import br.com.cogna.pegasusdesignsystemandroid.components.theme.LocalPegasusFontWeightComposition
+import br.com.cogna.pegasusdesignsystemandroid.components.theme.LocalPegasusSpacingComposition
+import br.com.cogna.pegasusdesignsystemandroid.components.theme.LocalPegasusThemeComposition
 import br.com.cogna.pegasusdesignsystemandroid.components.theme.StatusBarColor
 
 
 val sofiaPaletteLight = sofiaLightSchemeColors
 val sofiaPaletteDark = sofiaDarkSchemeColors
 
-var LocalPegasusThemeComposition = staticCompositionLocalOf<PegasusColorsScheme> {
-    sofiaPaletteLight
-}
-
-var LocalPegasusSpacingComposition = staticCompositionLocalOf<PegasusSpacing> {
-    sofiaSpacing
-}
 
 @Composable
 fun SofiaTheme(
@@ -53,11 +56,14 @@ fun SofiaTheme(
         } else {
             sofiaPaletteLight
         }
-        val sofiaSpacing1 = sofiaSpacing
+
 
         CompositionLocalProvider(
             LocalPegasusThemeComposition provides colorsScheme,
-            LocalPegasusSpacingComposition provides sofiaSpacing1
+            LocalPegasusSpacingComposition provides sofiaSpacing,
+            LocalPegasusBorderRadiusComposition provides sofiaBorderRadius,
+            LocalPegasusBorderStrokeComposition provides sofiaBorderStrokes,
+            LocalPegasusFontWeightComposition provides sofiaFontWeight
         ) {
             StatusBarColor(colorsScheme.primary.toArgb(), darkTheme)
 

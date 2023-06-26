@@ -10,8 +10,19 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
-import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.LocalPegasusSpacingComposition
-import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.LocalPegasusThemeComposition
+import br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme.border_stroke.saraivaBorderStrokes
+import br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme.color.saraivaDarkSchemeColors
+import br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme.color.saraivaLightSchemeColors
+import br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme.font.saraivaFontWeight
+import br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme.shapes.saraivaBorderRadius
+import br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme.shapes.saraivaShapes
+import br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme.spacing.saraivaSpacing
+import br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme.typography.saraivaTypography
+import br.com.cogna.pegasusdesignsystemandroid.components.theme.LocalPegasusBorderRadiusComposition
+import br.com.cogna.pegasusdesignsystemandroid.components.theme.LocalPegasusBorderStrokeComposition
+import br.com.cogna.pegasusdesignsystemandroid.components.theme.LocalPegasusFontWeightComposition
+import br.com.cogna.pegasusdesignsystemandroid.components.theme.LocalPegasusSpacingComposition
+import br.com.cogna.pegasusdesignsystemandroid.components.theme.LocalPegasusThemeComposition
 import br.com.cogna.pegasusdesignsystemandroid.components.theme.StatusBarColor
 
 
@@ -27,8 +38,12 @@ fun SaraivaTheme(
     content: @Composable () -> Unit
 ) {
 
+    //To Enable Previews
     LocalPegasusThemeComposition = staticCompositionLocalOf { saraivaPaletteLight }
     LocalPegasusSpacingComposition = staticCompositionLocalOf { saraivaSpacing }
+    LocalPegasusBorderRadiusComposition = staticCompositionLocalOf { saraivaBorderRadius}
+    LocalPegasusBorderStrokeComposition = staticCompositionLocalOf { saraivaBorderStrokes}
+    LocalPegasusFontWeightComposition = staticCompositionLocalOf { saraivaFontWeight}
 
     if (dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
         val context = LocalContext.current
@@ -57,7 +72,10 @@ fun SaraivaTheme(
 
         CompositionLocalProvider(
             LocalPegasusThemeComposition provides colorsScheme,
-            LocalPegasusSpacingComposition provides saraivaSpacing
+            LocalPegasusSpacingComposition provides saraivaSpacing,
+            LocalPegasusBorderRadiusComposition provides saraivaBorderRadius,
+            LocalPegasusBorderStrokeComposition provides saraivaBorderStrokes,
+            LocalPegasusFontWeightComposition provides saraivaFontWeight
         ) {
             StatusBarColor(colorsScheme.primary.toArgb(), darkTheme)
 

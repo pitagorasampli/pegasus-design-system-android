@@ -1,4 +1,4 @@
-package br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme
+package br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.spacing
 
 import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.tokens.SofiaSpacingTokens
 import br.com.cogna.pegasusdesignsystemandroid.components.spacing.PegasusSpacing

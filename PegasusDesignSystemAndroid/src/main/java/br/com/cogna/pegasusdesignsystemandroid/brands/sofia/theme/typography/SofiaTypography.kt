@@ -1,4 +1,4 @@
-package br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme
+package br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.typography
 
 import androidx.compose.material3.Typography
 import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.tokens.SofiaTypographyTokens

@@ -1,4 +1,4 @@
-package br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme
+package br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme.color
 
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme

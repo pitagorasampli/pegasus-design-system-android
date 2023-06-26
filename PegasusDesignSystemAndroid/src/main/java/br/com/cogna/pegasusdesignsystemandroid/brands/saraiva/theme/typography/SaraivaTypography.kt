@@ -1,4 +1,4 @@
-package br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme
+package br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme.typography
 
 import androidx.compose.material3.Typography
 import br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens.SaraivaTypographyTokens

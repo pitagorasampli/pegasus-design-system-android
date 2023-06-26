@@ -1,4 +1,4 @@
-package br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme
+package br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme.spacing
 
 import br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens.SaraivaSpacingTokens
 import br.com.cogna.pegasusdesignsystemandroid.components.spacing.PegasusSpacing

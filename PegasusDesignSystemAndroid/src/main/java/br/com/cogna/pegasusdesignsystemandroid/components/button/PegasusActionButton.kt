@@ -123,7 +123,7 @@ fun PegasusActionButtonEnabled(
         ),
         elevation = ButtonDefaults.elevation(1.dp),
         contentPadding = PaddingValues(),
-        shape = MaterialTheme.shapes.medium,
+        shape = PegasusThemeProvider.borderRadius.button,
         onClick = {
             onClickEnabled()
         }
@@ -137,7 +137,7 @@ fun PegasusActionButtonEnabled(
         ) {
             Row(
                 horizontalArrangement = Arrangement.Center, modifier = modifier.padding(
-                    start = 16.dp, end = 16.dp, top = 16.dp, bottom = 16.dp
+                    PegasusThemeProvider.spacing.spacing6
                 )
             ) {
                 iconLeft?.invoke()
@@ -173,7 +173,7 @@ fun PegasusActionButtonLoading(
         ),
         elevation = ButtonDefaults.elevation(1.dp),
         contentPadding = PaddingValues(),
-        shape = MaterialTheme.shapes.medium,
+        shape = PegasusThemeProvider.borderRadius.button,
         onClick = {}
     ) {
 
