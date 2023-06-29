@@ -9,5 +9,6 @@ data class PegasusBorderRadius(
     val large: CornerBasedShape,
     val extraLarge: CornerBasedShape,
     val button: CornerBasedShape,
-    val card: CornerBasedShape
+    val card: CornerBasedShape,
+    val bottomSheet: CornerBasedShape
 )

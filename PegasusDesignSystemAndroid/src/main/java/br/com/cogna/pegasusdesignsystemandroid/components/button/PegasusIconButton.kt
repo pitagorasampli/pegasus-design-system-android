@@ -38,6 +38,7 @@ enum class PegasusIconButtonState {
 @Composable
 fun PegasusIconButton(
     @DrawableRes iconResource: Int,
+    modifier: Modifier = Modifier,
     iconTintUnpressed: Color = PegasusThemeProvider.colorScheme.onSurfaceVariant,
     iconTintPressed: Color = PegasusThemeProvider.colorScheme.primary,
     iconSize: Dp = PegasusThemeProvider.spacing.spacing8,
@@ -73,7 +74,7 @@ fun PegasusIconButton(
         onClick()
     }) {
         Icon(
-            modifier = Modifier.size(iconSize),
+            modifier = modifier.size(iconSize),
             imageVector = ImageVector.vectorResource(iconResource),
             contentDescription = contentDescription,
             tint = iconTintAnimated
@@ -87,7 +88,7 @@ fun PegasusIconButton(
 
 @SofiaPreviews
 @Composable
-@ShowkaseComposable(name = "Pegasus Icon Button Sofia", group = "Buttons")
+@ShowkaseComposable(name = "Pegasus Icon Button Sofia", group = "Buttons", defaultStyle = true)
 fun PegasusIconButton_Sofia_Preview() {
     SofiaTheme {
         Column(
@@ -111,7 +112,7 @@ fun PegasusIconButton_Sofia_Preview() {
 
 @SaraivaPreviews
 @Composable
-@ShowkaseComposable(name = "Pegasus Icon Button Saraiva", group = "Buttons")
+@ShowkaseComposable(name = "Pegasus Icon Button Saraiva", group = "Buttons", defaultStyle = true)
 fun PegasusIconButton_Saraiva_Preview() {
     SaraivaTheme {
         Column(

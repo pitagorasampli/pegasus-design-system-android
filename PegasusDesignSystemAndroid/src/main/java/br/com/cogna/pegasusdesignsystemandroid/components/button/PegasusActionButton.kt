@@ -137,7 +137,8 @@ fun PegasusActionButtonEnabled(
         ) {
             Row(
                 horizontalArrangement = Arrangement.Center, modifier = modifier.padding(
-                    PegasusThemeProvider.spacing.spacing6
+                    horizontal = PegasusThemeProvider.spacing.spacing6,
+                    vertical = PegasusThemeProvider.spacing.spacing4
                 )
             ) {
                 iconLeft?.invoke()

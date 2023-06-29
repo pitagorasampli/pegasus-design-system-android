@@ -8,7 +8,7 @@ object Compose {
     private const val composeUiVersion = "1.4.0-beta01"
     private const val constraintLayoutComposeVersion = "1.0.0"
     private const val composeActivitiesVersion = "1.6.0"
-    private const val composeNavigationVersion = "2.5.2"
+    private const val composeNavigationVersion = "2.6.0"
     private const val composeBomVersion = "2023.03.00"
 
 
