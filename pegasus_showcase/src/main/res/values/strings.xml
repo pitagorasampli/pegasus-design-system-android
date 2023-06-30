@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">PegasusShowcase</string>
+    <string name="pegasus_themes">Temas das marcas</string>
+    <string name="screen_main">Principal</string>
+
+    <string name="screen_buttons">Botões</string>
+    <string name="screen_typography">Tipografia</string>
+
 </resources>

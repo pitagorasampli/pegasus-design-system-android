@@ -91,6 +91,7 @@ dependencies {
     implementation(ImageLibraries.coil)
     implementation(Compose.navigation)
 
-    implementation (ShowKase.showKase)
-    kapt (ShowKase.showKaseProcessor)
+    implementation(ShowKase.showKase)
+    kapt(ShowKase.showKaseProcessor)
+
 }

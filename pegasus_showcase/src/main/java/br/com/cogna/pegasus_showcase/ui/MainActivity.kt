@@ -2,18 +2,35 @@ package br.com.cogna.pegasus_showcase.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import com.airbnb.android.showkase.models.Showkase
+import androidx.activity.compose.setContent
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import br.com.cogna.pegasus_showcase.screens.PegasusShowcaseNavHost
+import br.com.cogna.pegasusdesignsystemandroid.components.theme.PegasusBrandThemesProvider
+import br.com.cogna.pegasusdesignsystemandroid.components.theme.PegasusTheme
 
 class MainActivity : ComponentActivity() {
 
+    private var currentTheme: String by mutableStateOf("Sofia")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContent {
+            PegasusTheme {
+                PegasusShowcaseNavHost(
+                    currentTheme = currentTheme,
+                    brandList = PegasusBrandThemesProvider.brandList,
+                    onChangeTheme = {
+                        onChangeTheme(it)
+                    })
+            }
+        }
     }
 
-    override fun onResume() {
-        super.onResume()
-        startActivity(Showkase.getBrowserIntent(this))
-        finish()
+    private fun onChangeTheme(theme: String) {
+        currentTheme = theme
     }
+
 }
 
