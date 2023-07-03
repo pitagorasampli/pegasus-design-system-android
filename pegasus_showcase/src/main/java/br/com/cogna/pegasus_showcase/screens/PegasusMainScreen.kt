@@ -23,6 +23,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import br.com.cogna.pegasus_showcase.common_components.PegasusThemeTopBar
 import br.com.cogna.pegasus_showcase.navigation.PegasusScreen
 import br.com.cogna.ui.pegasus_showcase.R
 
@@ -37,7 +38,7 @@ fun PegasusShowcaseNavHost(
     startDestination: String = PegasusScreen.Main.route
 ) {
     Scaffold(topBar = {
-        PegasusTopBar(brandList, onChangeTheme)
+        PegasusThemeTopBar(brandList = brandList, onChangeTheme = onChangeTheme)
     }, content = { innerPadding ->
         NavHost(
             modifier = modifier.padding(innerPadding),
@@ -56,44 +57,6 @@ fun PegasusShowcaseNavHost(
     })
 }
 
-@Composable
-private fun PegasusTopBar(brandList: List<String>, onChangeTheme: (String) -> Unit) {
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(MaterialTheme.colorScheme.primary)
-    ) {
-        Text(
-            text = stringResource(id = R.string.pegasus_themes),
-            modifier = Modifier
-                .padding(16.dp),
-            color = MaterialTheme.colorScheme.onPrimary,
-            style = MaterialTheme.typography.bodyLarge
-        )
-        Row(
-            horizontalArrangement = Arrangement.SpaceEvenly,
-            modifier = Modifier
-                .fillMaxWidth()
-                .horizontalScroll(rememberScrollState())
-                .fillMaxWidth()
-
-        ) {
-
-            brandList.forEach {
-                Text(
-                    text = it,
-                    modifier = Modifier
-                        .padding(16.dp)
-                        .clickable {
-                            onChangeTheme(it)
-                        },
-                    color = MaterialTheme.colorScheme.onPrimary,
-                    style = MaterialTheme.typography.bodyMedium
-                )
-            }
-        }
-    }
-}
 
 
 @Composable

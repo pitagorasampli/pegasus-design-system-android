@@ -12,8 +12,11 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Icon
@@ -35,10 +38,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import br.com.cogna.pegasusdesignsystemandroid.R
 import br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme.SaraivaPreviews
 import br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.theme.SaraivaTheme
 import br.com.cogna.pegasusdesignsystemandroid.brands.sofia.theme.SofiaPreviews
@@ -258,70 +263,76 @@ fun RowScope.PegasusButtonText(
 }
 
 //region Previews
+@Composable
+fun PegasusActionButtonPreview() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = PegasusThemeProvider.colorScheme.background)
+    ) {
+
+        //Default Style
+        Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
+            PegasusActionButton(text = stringResource(id = R.string.button_preview_text))
+        }
+
+        //Icon Left Style
+        Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
+            PegasusActionButton(text = stringResource(id = R.string.button_preview_text), iconLeft = {
+                PegasusActionButtonIcon(Icons.Rounded.ShoppingCart)
+            })
+        }
+
+        //Icon Right Style
+        Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
+            PegasusActionButton(text = stringResource(id = R.string.button_preview_text), iconRight = {
+                PegasusActionButtonIcon(Icons.Rounded.ShoppingCart)
+            })
+        }
+
+        //Loading Style
+        var buttonStateForLoadingPreview by remember {
+            mutableStateOf(PegasusActionButtonState.ENABLED)
+        }
+
+        Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
+            PegasusActionButton(text = stringResource(id = R.string.button_preview_text_loading),
+                iconLeft = {
+                    PegasusActionButtonIcon(imageVector = Icons.Rounded.Save)
+                }, buttonState = buttonStateForLoadingPreview, onClickEnabled = {
+                    buttonStateForLoadingPreview =
+                        PegasusActionButtonState.LOADING
+                }
+            )
+        }
+
+        var buttonStateForDisablePreview by remember {
+            mutableStateOf(PegasusActionButtonState.ENABLED)
+        }
+
+        //Disable Style
+        Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
+            PegasusActionButton(
+                text = stringResource(id = R.string.button_preview_text_disable),
+                buttonState = buttonStateForDisablePreview,
+                onClickEnabled = {
+                    buttonStateForDisablePreview = PegasusActionButtonState.DISABLED
+                }
+            )
+        }
+    }
+}
+
 
 @Composable
 @SofiaPreviews
 @ShowkaseComposable(name = "Pegasus Action Button Sofia", group = "Buttons", defaultStyle = true)
 fun PegasusActionButton_Sofia_Preview() {
     SofiaTheme {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(color = PegasusThemeProvider.colorScheme.background)
-        ) {
-            //Default Style
-            Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
-                PegasusActionButton(text = "Default Style")
-            }
-
-            //Icon Left Style
-            Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
-                PegasusActionButton(text = "With Icon Left", iconLeft = {
-                    PegasusActionButtonIcon(Icons.Rounded.ShoppingCart)
-                })
-            }
-
-            //Icon Right Style
-            Box(modifier = Modifier.padding(16.dp)) {
-                PegasusActionButton(text = "With Icon Right", iconRight = {
-                    PegasusActionButtonIcon(Icons.Rounded.ShoppingCart)
-                })
-            }
-
-            //Loading Style
-            var buttonStateForLoadingPreview by remember {
-                mutableStateOf(PegasusActionButtonState.ENABLED)
-            }
-
-            Box(modifier = Modifier.padding(16.dp)) {
-                PegasusActionButton(text = "Click me to start Loading",
-                    iconLeft = {
-                        PegasusActionButtonIcon(imageVector = Icons.Rounded.Save)
-                    }, buttonState = buttonStateForLoadingPreview, onClickEnabled = {
-                        buttonStateForLoadingPreview =
-                            PegasusActionButtonState.LOADING
-                    }
-                )
-            }
-
-            var buttonStateForDisablePreview by remember {
-                mutableStateOf(PegasusActionButtonState.ENABLED)
-            }
-
-            //Disable Style
-            Box(modifier = Modifier.padding(16.dp)) {
-                PegasusActionButton(
-                    text = "Click me to disable",
-                    buttonState = buttonStateForDisablePreview,
-                    onClickEnabled = {
-                        buttonStateForDisablePreview = PegasusActionButtonState.DISABLED
-                    }
-                )
-            }
-
-        }
+        PegasusActionButtonPreview()
     }
 }
+
 
 
 @Composable
@@ -329,62 +340,7 @@ fun PegasusActionButton_Sofia_Preview() {
 @ShowkaseComposable(name = "Pegasus Action Button Saraiva", group = "Buttons", defaultStyle = true)
 fun PegasusActionButton_Saraiva_Preview() {
     SaraivaTheme {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(color = PegasusThemeProvider.colorScheme.background)
-        ) {
-            //Default Style
-            Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
-                PegasusActionButton(text = "Default Style")
-            }
-
-            //Icon Left Style
-            Box(modifier = Modifier.padding(16.dp)) {
-                PegasusActionButton(text = "With Icon Left", iconLeft = {
-                    PegasusActionButtonIcon(Icons.Rounded.ShoppingCart)
-                })
-            }
-
-            //Icon Right Style
-            Box(modifier = Modifier.padding(16.dp)) {
-                PegasusActionButton(text = "With Icon Right", iconRight = {
-                    PegasusActionButtonIcon(Icons.Rounded.ShoppingCart)
-                })
-            }
-
-            //Loading Style
-            var buttonStateForLoadingPreview by remember {
-                mutableStateOf(PegasusActionButtonState.ENABLED)
-            }
-
-            Box(modifier = Modifier.padding(16.dp)) {
-                PegasusActionButton(text = "Click me to start Loading",
-                    iconLeft = {
-                        PegasusActionButtonIcon(imageVector = Icons.Rounded.Save)
-                    }, buttonState = buttonStateForLoadingPreview, onClickEnabled = {
-                        buttonStateForLoadingPreview =
-                            PegasusActionButtonState.LOADING
-                    }
-                )
-            }
-
-            var buttonStateForDisablePreview by remember {
-                mutableStateOf(PegasusActionButtonState.ENABLED)
-            }
-
-            //Disable Style
-            Box(modifier = Modifier.padding(16.dp)) {
-                PegasusActionButton(
-                    text = "Click me to disable",
-                    buttonState = buttonStateForDisablePreview,
-                    onClickEnabled = {
-                        buttonStateForDisablePreview = PegasusActionButtonState.DISABLED
-                    }
-                )
-            }
-
-        }
+        PegasusActionButtonPreview()
     }
 }
 

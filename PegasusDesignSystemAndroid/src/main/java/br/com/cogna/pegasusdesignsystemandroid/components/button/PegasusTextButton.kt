@@ -12,9 +12,13 @@ import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.SwapHoriz
+import androidx.compose.material.ripple.LocalRippleTheme
+import androidx.compose.material.ripple.RippleAlpha
+import androidx.compose.material.ripple.RippleTheme
 import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -64,6 +68,13 @@ fun PegasusTextButton(
 
 }
 
+private object NoRippleTheme : RippleTheme {
+    @Composable
+    override fun defaultColor() = Color.Unspecified
+
+    @Composable
+    override fun rippleAlpha(): RippleAlpha = RippleAlpha(0.0f,0.0f,0.0f,0.0f)
+}
 
 @Composable
 fun PegasusTextButtonEnabled(
@@ -79,46 +90,48 @@ fun PegasusTextButtonEnabled(
     onClickEnabled: () -> Unit
 ) {
 
+    CompositionLocalProvider(LocalRippleTheme provides NoRippleTheme) {
 
-    //TODO: Chamar Naila, cor neutral 80 nao tem color role atribuida a ela para o texto no disabled
-    Button(
-        modifier = modifier,
-        enabled = buttonState == PegasusTextButtonState.ENABLED,
-        colors = ButtonDefaults.buttonColors(
-            backgroundColor = Color.Transparent,
-            contentColor = enabledElementsColor,
-            disabledBackgroundColor = Color.Transparent,
-            disabledContentColor = disabledElementsColor
-        ),
-        elevation = ButtonDefaults.elevation(0.dp),
-        contentPadding = PaddingValues(),
-        shape = MaterialTheme.shapes.medium,
-        onClick = {
-            onClickEnabled()
-        }
-    ) {
-
-        Box(
-            modifier = backgroundModifier
-                .fillMaxWidth()
-                .then(modifier),
-            contentAlignment = Alignment.Center,
+        //TODO: Chamar Naila, cor neutral 80 nao tem color role atribuida a ela para o texto no disabled
+        Button(
+            modifier = modifier,
+            enabled = buttonState == PegasusTextButtonState.ENABLED,
+            colors = ButtonDefaults.buttonColors(
+                backgroundColor = Color.Transparent,
+                contentColor = enabledElementsColor,
+                disabledBackgroundColor = Color.Transparent,
+                disabledContentColor = disabledElementsColor
+            ),
+            elevation = ButtonDefaults.elevation(0.dp),
+            contentPadding = PaddingValues(),
+            shape = MaterialTheme.shapes.medium,
+            onClick = {
+                onClickEnabled()
+            }
         ) {
-            Row(
-                horizontalArrangement = Arrangement.Center, modifier = modifier.padding(
-                    PegasusThemeProvider.spacing.spacing6
-                )
+
+            Box(
+                modifier = backgroundModifier
+                    .fillMaxWidth()
+                    .then(modifier),
+                contentAlignment = Alignment.Center,
             ) {
-                iconLeft?.invoke()
+                Row(
+                    horizontalArrangement = Arrangement.Center, modifier = modifier.padding(
+                        PegasusThemeProvider.spacing.spacing6
+                    )
+                ) {
+                    iconLeft?.invoke()
 
-                PegasusButtonText(
-                    description = contentDescription,
-                    text = text,
-                    elementsColor = if (buttonState == PegasusTextButtonState.ENABLED) enabledElementsColor else disabledElementsColor
-                )
+                    PegasusButtonText(
+                        description = contentDescription,
+                        text = text,
+                        elementsColor = if (buttonState == PegasusTextButtonState.ENABLED) enabledElementsColor else disabledElementsColor
+                    )
 
-                iconRight?.invoke()
+                    iconRight?.invoke()
 
+                }
             }
         }
     }
@@ -126,101 +139,70 @@ fun PegasusTextButtonEnabled(
 
 //region Sofia Previews
 @Composable
-@SofiaPreviews
-@ShowkaseComposable(name = "Pegasus Text Button", group = "Buttons", defaultStyle = true)
-fun PegasusTextButton_Sofia_Preview() {
-    SofiaTheme {
-        var buttonState by remember {
+fun PegasusTextButtonPreview() {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(color = PegasusThemeProvider.colorScheme.background)
+    ) {
+        //Default Style
+        Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
+            PegasusTextButton(text = "Click me button", onClickEnabled = {})
+        }
+
+        Divider()
+
+        //Disable with icon left Style
+
+        var buttonStateLeftIcon by remember {
             mutableStateOf(PegasusTextButtonState.ENABLED)
         }
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(color = PegasusThemeProvider.colorScheme.background)
-        ) {
-            //Default Style
-            Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
-                PegasusTextButton(text = "Click me button", onClickEnabled = {})
-            }
+        Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
+            PegasusTextButton(text = "Click To Disable me",
+                iconLeft = {
+                    PegasusActionButtonIcon(imageVector = Icons.Default.SwapHoriz)
+                },
+                buttonState = buttonStateLeftIcon,
+                onClickEnabled = {
+                    buttonStateLeftIcon = PegasusTextButtonState.DISABLED
+                })
+        }
 
-            Divider()
+        Divider()
 
-            //Disable with icon left Style
-            Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
-                PegasusTextButton(text = "Click To Disable me",
-                    iconLeft = {
-                        PegasusActionButtonIcon(imageVector = Icons.Default.SwapHoriz)
-                    },
-                    buttonState = buttonState,
-                    onClickEnabled = {
-                        buttonState = PegasusTextButtonState.DISABLED
-                    })
-            }
-
-            Divider()
-
-            //Disable with icon right Style
-            Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
-                PegasusTextButton(text = "Click To Disable me",
-                    iconRight = {
-                        PegasusActionButtonIcon(imageVector = Icons.Default.SwapHoriz)
-                    },
-                    buttonState = buttonState,
-                    onClickEnabled = {
-                        buttonState = PegasusTextButtonState.DISABLED
-                    })
-            }
+        var buttonStateRightIcon by remember {
+            mutableStateOf(PegasusTextButtonState.ENABLED)
+        }
+        //Disable with icon right Style
+        Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
+            PegasusTextButton(text = "Click To Disable me",
+                iconRight = {
+                    PegasusActionButtonIcon(imageVector = Icons.Default.SwapHoriz)
+                },
+                buttonState = buttonStateRightIcon,
+                onClickEnabled = {
+                    buttonStateRightIcon = PegasusTextButtonState.DISABLED
+                })
         }
     }
 }
 
 @Composable
 @SofiaPreviews
+@ShowkaseComposable(name = "Pegasus Text Button", group = "Buttons", defaultStyle = true)
+fun PegasusTextButton_Sofia_Preview() {
+    SofiaTheme {
+        PegasusTextButtonPreview()
+    }
+}
+
+
+@Composable
+@SofiaPreviews
 @ShowkaseComposable(name = "Pegasus Text Button Sofia", group = "Buttons", defaultStyle = true)
 fun PegasusTextButton_Saraiva_Preview() {
     SaraivaTheme {
-        var buttonState by remember {
-            mutableStateOf(PegasusTextButtonState.ENABLED)
-        }
-
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(color = PegasusThemeProvider.colorScheme.background)
-        ) {
-            //Default Style
-            Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
-                PegasusTextButton(text = "Click me Text Button", onClickEnabled = {})
-            }
-
-            Divider()
-
-            //Disable with icon left Style
-            Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
-                PegasusTextButton(text = "Click To Disable me",
-                    iconLeft = {
-                        PegasusActionButtonIcon(imageVector = Icons.Default.SwapHoriz)
-                    },
-                    buttonState = buttonState,
-                    onClickEnabled = {
-                        buttonState = PegasusTextButtonState.DISABLED
-                    })
-            }
-
-            Divider()
-
-            //Disable with icon right Style
-            Box(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
-                PegasusTextButton(text = "Click To Disable me",
-                    iconRight = {
-                        PegasusActionButtonIcon(imageVector = Icons.Default.SwapHoriz)
-                    },
-                    buttonState = buttonState,
-                    onClickEnabled = {
-                        buttonState = PegasusTextButtonState.DISABLED
-                    })
-            }
-        }
+        PegasusTextButtonPreview()
     }
 }
 //endregion Sofia Previews

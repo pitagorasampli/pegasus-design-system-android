@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="button_preview_text">Teste de Botão</string>
+    <string name="button_preview_text_loading">Teste de Botão - Loading</string>
+    <string name="button_preview_text_disable">Teste de Botão - Desabilitar</string>
+
+
+</resources>

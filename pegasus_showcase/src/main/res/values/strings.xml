@@ -4,6 +4,9 @@
     <string name="screen_main">Principal</string>
 
     <string name="screen_buttons">Botões</string>
+    <string name="screen_buttons_action">Botões de ação</string>
+    <string name="screen_buttons_text">Botões de texto</string>
     <string name="screen_typography">Tipografia</string>
+
 
 </resources>
