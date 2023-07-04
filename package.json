@@ -25,7 +25,8 @@
     "execStyleDictionary": "node execStyleDictionary.mjs",
     "runStyleDictionary": "node runStyleDictionary.mjs",
     "sofiaStyleDictionary": "node sofiaStyleDictionary.mjs",
-    "saraivaStyleDictionary": "node saraivaStyleDictionary.mjs"
+    "saraivaStyleDictionary": "node saraivaStyleDictionary.mjs",
+    "redBalloonStyleDictionary": "node redBalloonStyleDictionary.mjs"
   },
   "dependencies": {
     "@tokens-studio/sd-transforms": "^0.9.8",

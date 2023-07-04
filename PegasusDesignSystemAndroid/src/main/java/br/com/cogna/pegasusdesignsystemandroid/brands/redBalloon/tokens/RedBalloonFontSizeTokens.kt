@@ -1,16 +1,16 @@
 
 
 // Do not edit directly
-// Generated on Tue, 04 Jul 2023 20:13:57 GMT
+// Generated on Tue, 04 Jul 2023 20:15:17 GMT
 
 
 
-package br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens;
+package br.com.cogna.pegasusdesignsystemandroid.brands.redBalloon.tokens;
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.*
 
-object SaraivaFontSizeTokens {
+object RedBalloonFontSizeTokens {
   val font_size_lg = 32.sp
   val font_size_md = 24.sp
   val font_size_sm = 20.sp

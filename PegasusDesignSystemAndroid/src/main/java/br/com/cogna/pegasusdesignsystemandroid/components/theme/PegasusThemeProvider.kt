@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import br.com.cogna.pegasusdesignsystemandroid.components.border_strokes.PegasusBorderStrokes
 import br.com.cogna.pegasusdesignsystemandroid.components.colors.PegasusColorsScheme
 import br.com.cogna.pegasusdesignsystemandroid.components.font.PegasusFontWeight
+import br.com.cogna.pegasusdesignsystemandroid.components.shadow.PegasusShadowProvider
 import br.com.cogna.pegasusdesignsystemandroid.components.shapes.PegasusBorderRadius
 import br.com.cogna.pegasusdesignsystemandroid.components.spacing.PegasusSpacing
 
@@ -22,4 +23,7 @@ object PegasusThemeProvider {
 
     val fontWeight: PegasusFontWeight
         @Composable get() = LocalPegasusFontWeightComposition.current
+
+    val shadow: PegasusShadowProvider
+        @Composable get() = LocalPegasusShadowComposition.current
 }

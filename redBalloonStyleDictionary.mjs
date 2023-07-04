@@ -1,7 +1,7 @@
 import Color from 'tinycolor2';
 
 import StyleDictionary from 'style-dictionary';
-import config from './style-dictionary-sofia-config.json' assert { type: 'json' };
+import config from './style-dictionary-redballoon-config.json' assert { type: 'json' };
 import { registerTransforms } from '@tokens-studio/sd-transforms';
 import { transformDimension  } from '@tokens-studio/sd-transforms';
 import * as composeFileUtils from './composeFileUtils.mjs';
@@ -15,7 +15,7 @@ import * as adjustShadowToken from './composeAdjustShadowTokenFile.mjs'
 
 const styleDictionary = StyleDictionary.extend(config);
 
-const brandName = "Sofia"
+const brandName = "RedBalloon"
 const baseFolderPath = 'pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/brands/brandFolder/tokens/'
 
 composeTransformUtils(brandName, styleDictionary)
@@ -26,6 +26,4 @@ adjustFontWeightToken.adjustFontWeightTokenFile(brandName, baseFolderPath)
 adjustFontFamilyToken.adjustFontFamilyTokenFile(brandName, baseFolderPath)
 adjustTypographyToken.adjustTypographyTokenFile(brandName, baseFolderPath)
 adjustShadowToken.adjustShadowTokenFile(brandName, baseFolderPath)
-
-
 

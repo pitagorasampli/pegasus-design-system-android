@@ -1,18 +1,18 @@
 
 
 // Do not edit directly
-// Generated on Tue, 04 Jul 2023 20:14:06 GMT
+// Generated on Tue, 04 Jul 2023 20:15:17 GMT
 
 
 
-package br.com.cogna.pegasusdesignsystemandroid.brands.sofia.tokens;
+package br.com.cogna.pegasusdesignsystemandroid.brands.redBalloon.tokens;
 
 
 import androidx.compose.ui.unit.*
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 
-object SofiaBorderTokens {
+object RedBalloonBorderTokens {
   val border_radius_circle = RoundedCornerShape(50)
   val border_radius_lg = 16.dp
   val border_radius_md = 12.dp

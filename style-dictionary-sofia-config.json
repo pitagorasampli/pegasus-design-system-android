@@ -9,12 +9,12 @@
         "name/cti/snake",
         "name/composeColorName",
         "name/composeColorReference",
-        "name/composeElevation",
         "name/composeFontFamily",
         "name/composeFontWeight",
         "size/px_to_dp",
         "size/px_to_sp",
-        "size/composeLineHeight"
+        "size/composeLineHeight",
+        "shadow/compose"
       ],
       "transformGroup": "compose",
       "buildPath": "pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/brands/sofia/tokens/",
@@ -65,18 +65,6 @@
           "filter": {
             "attributes": {
               "category": "border"
-            }
-          }
-        },
-
-        {
-          "destination": "SofiaElevationTokens.kt",
-          "format": "compose/object",
-          "className": "SofiaElevationTokens",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia.tokens",
-          "filter": {
-            "attributes": {
-              "category": "elevation"
             }
           }
         },
@@ -147,6 +135,20 @@
           "filter": {
             "attributes": {
               "category": "typography"
+            }
+          }
+        },
+        {
+          "destination": "SofiaShadowTokens.kt",
+          "format": "compose/object",
+          "className": "SofiaShadowTokens",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.sofia.tokens",
+          "options": {
+            "outputReferences": true
+          },
+          "filter": {
+            "attributes": {
+              "category": "shadow"
             }
           }
         }

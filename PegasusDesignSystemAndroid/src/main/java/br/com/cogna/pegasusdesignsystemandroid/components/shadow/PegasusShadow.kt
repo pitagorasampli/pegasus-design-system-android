@@ -10,6 +10,14 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
+data class PegasusShadowProperties(
+    val offsetX: Dp, val offsetY: Dp, val blur: Dp, val color: Color
+)
+
+fun Modifier.pegasusShadow(
+    properties: PegasusShadowProperties
+) = this.shadow(properties.color, properties.offsetX, properties.offsetY, properties.blur)
+
 fun Modifier.shadow(
     color: Color = Color.Black,
     offsetX: Dp = 0.dp,
@@ -37,3 +45,12 @@ fun Modifier.shadow(
         )
     }
 })
+
+data class PegasusShadowProvider(
+    val shadow1 : PegasusShadowProperties,
+    val shadow2 : PegasusShadowProperties,
+    val shadow3 : PegasusShadowProperties,
+    val shadow4 : PegasusShadowProperties,
+    val shadow5 : PegasusShadowProperties,
+    val shadow6 : PegasusShadowProperties,
+)

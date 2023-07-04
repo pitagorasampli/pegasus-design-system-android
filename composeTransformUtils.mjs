@@ -134,31 +134,33 @@ val ${prop.name}  = TextStyle(
  })
 
 styleDictionary.registerTransform({
-                 name: 'name/composeElevation',
-                 type: 'value',
-                 transitive: true,
-                 matcher: token => ['boxShadow'].includes(token.type),
-                 transformer: function(token)  {
-                 /* const shadow = Object.values(token.value);
-                 const [x, y, blur, spread, color] = shadow.map((s) => s.toString());
-                 //TODO
+                 name: 'shadow/compose',
+               type: 'value',
+               matcher: function(prop) {
+                 return prop.attributes.category === 'shadow';
+               },
+                 transformer: function(prop) {
+                   // destructure shadow values from original token value
+                   const {
+                     x,
+                     y,
+                     blur,
+                     spread,
+                     color,
+                     alpha
+                   } = prop.original.value
 
-                    // Allow both single and multi shadow tokens:
-                  const shadows = Array.isArray(token.value) ? token.value : [token.value];
+                   // convert hex code to rgba string
+                   const shadowColor = Color(color)
+                   const hex = shadowColor.toHex()
 
-                  const transformedShadows = shadows.map((shadow) => {
-                       const { x, y, blur, spread, color, type } = shadow;
-                       const inset = type === "innerShadow" ? "inset " : "";
-                       return `${inset}${x}px ${y}px ${blur}px ${spread}px ${color}`;
-                     });
-
-                     return transformedShadows.join(", "); */
-
-                    return "1.dp";
+                   return `PegasusShadowProperties(offsetX = ${x}.dp, offsetY = ${y}.dp, blur = ${blur}.dp, Color(0xFF${hex}))`
                  }
-});
+             , })
 
 
+
+//End composeTransformUtils
 }
 
 export { composeTransformUtils };

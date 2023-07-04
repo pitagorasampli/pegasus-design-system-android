@@ -1,6 +1,6 @@
 {
   "source": [
-    "tokens_src/jsonTokens/themes/Saraiva/**/*.json"
+    "tokens_src/jsonTokens/themes/Red Balloon/**/*.json"
   ],
   "platforms": {
     "compose": {
@@ -17,13 +17,13 @@
         "shadow/compose"
       ],
       "transformGroup": "compose",
-      "buildPath": "pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/brands/saraiva/tokens/",
+      "buildPath": "pegasusdesignsystemandroid/src/main/java/br/com/cogna/pegasusdesignsystemandroid/brands/redBalloon/tokens/",
       "files": [
         {
-          "destination": "SaraivaPaletteTokens.kt",
+          "destination": "RedBalloonPaletteTokens.kt",
           "format": "compose/object",
-          "className": "SaraivaPaletteTokens",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens",
+          "className": "RedBalloonPaletteTokens",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.redBalloon.tokens",
           "filter": {
             "attributes": {
               "category": "palette"
@@ -32,10 +32,10 @@
         },
 
         {
-          "destination": "SaraivaColorSchemesTokens.kt",
+          "destination": "RedBalloonColorSchemesTokens.kt",
           "format": "compose/object",
-          "className": "SaraivaColorSchemesTokens",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens",
+          "className": "RedBalloonColorSchemesTokens",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.redBalloon.tokens",
           "filter": {
             "attributes": {
               "type": "color"
@@ -44,10 +44,10 @@
         },
 
         {
-          "destination": "SaraivaSpacingTokens.kt",
+          "destination": "RedBalloonSpacingTokens.kt",
           "format": "compose/object",
-          "className": "SaraivaSpacingTokens",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens",
+          "className": "RedBalloonSpacingTokens",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.redBalloon.tokens",
           "type": "float",
           "filter": {
             "attributes": {
@@ -57,10 +57,10 @@
         },
 
         {
-          "destination": "SaraivaBorderTokens.kt",
+          "destination": "RedBalloonBorderTokens.kt",
           "format": "compose/object",
-          "className": "SaraivaBorderTokens",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens",
+          "className": "RedBalloonBorderTokens",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.redBalloon.tokens",
           "type": "float",
           "filter": {
             "attributes": {
@@ -70,10 +70,10 @@
         },
 
         {
-          "destination": "SaraivaFontSizeTokens.kt",
+          "destination": "RedBalloonFontSizeTokens.kt",
           "format": "compose/object",
-          "className": "SaraivaFontSizeTokens",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens",
+          "className": "RedBalloonFontSizeTokens",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.redBalloon.tokens",
           "filter": {
             "attributes": {
               "category": "fontSize"
@@ -82,10 +82,10 @@
         },
 
         {
-          "destination": "SaraivaLineHeightTokens.kt",
+          "destination": "RedBalloonLineHeightTokens.kt",
           "format": "compose/object",
-          "className": "SaraivaLineHeightTokens",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens",
+          "className": "RedBalloonLineHeightTokens",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.redBalloon.tokens",
           "filter": {
             "attributes": {
               "category": "lineHeight"
@@ -94,10 +94,10 @@
         },
 
         {
-          "destination": "SaraivaFontFamilyTokens.kt",
+          "destination": "RedBalloonFontFamilyTokens.kt",
           "format": "compose/object",
-          "className": "SaraivaFontFamilyTokens",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens",
+          "className": "RedBalloonFontFamilyTokens",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.redBalloon.tokens",
           "options": {
             "outputReferences": true
           },
@@ -109,10 +109,10 @@
         },
 
         {
-          "destination": "SaraivaFontWeightTokens.kt",
+          "destination": "RedBalloonFontWeightTokens.kt",
           "format": "compose/object",
-          "className": "SaraivaFontWeightTokens",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens",
+          "className": "RedBalloonFontWeightTokens",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.redBalloon.tokens",
           "type": "float",
           "options": {
             "outputReferences": true
@@ -125,10 +125,10 @@
         },
 
         {
-          "destination": "SaraivaTypographyTokens.kt",
+          "destination": "RedBalloonTypographyTokens.kt",
           "format": "compose/typography",
-          "className": "SaraivaTypographyTokens",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens",
+          "className": "RedBalloonTypographyTokens",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.redBalloon.tokens",
           "options": {
             "outputReferences": true
           },
@@ -139,10 +139,10 @@
           }
         },
         {
-          "destination": "SaraivaShadowTokens.kt",
+          "destination": "RedBalloonShadowTokens.kt",
           "format": "compose/object",
-          "className": "SaraivaShadowTokens",
-          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.saraiva.tokens",
+          "className": "RedBalloonShadowTokens",
+          "packageName": "br.com.cogna.pegasusdesignsystemandroid.brands.redBalloon.tokens",
           "options": {
             "outputReferences": true
           },
@@ -166,11 +166,11 @@
       "buildPath": "pegasusdesignsystemandroid/src/main/res/values/",
       "files": [
         {
-          "destination": "saraiva_tokens_dimens.xml",
+          "destination": "redBalloon_tokens_dimens.xml",
           "format": "android/fontDimens"
         },
         {
-          "destination": "saraiva_tokens_colors.xml",
+          "destination": "redBalloon_tokens_colors.xml",
           "format": "android/colors"
         }
       ],

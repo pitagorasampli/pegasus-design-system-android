@@ -1,18 +1,18 @@
 
 
 // Do not edit directly
-// Generated on Tue, 04 Jul 2023 20:14:06 GMT
+// Generated on Tue, 04 Jul 2023 20:15:17 GMT
 
 
 
-package br.com.cogna.pegasusdesignsystemandroid.brands.sofia.tokens;
+package br.com.cogna.pegasusdesignsystemandroid.brands.redBalloon.tokens;
 
 
 
 
 import androidx.compose.ui.text.font.FontWeight
 
-object SofiaFontWeightTokens {
+object RedBalloonFontWeightTokens {
   val font_weight_black = FontWeight(900)
   val font_weight_bold = FontWeight(700)
   val font_weight_semibold = FontWeight(600)
