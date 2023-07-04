@@ -80,4 +80,6 @@ dependencies {
     implementation(Compose.activity)
     implementation(Compose.navigation)
     implementation(ImageLibraries.coil)
+    implementation("org.jetbrains.kotlin:kotlin-reflect:${Kotlin.kotlinVersion}")
+
 }

@@ -106,79 +106,85 @@ fun PegasusUIText(
     )
 }
 
+@Composable
+fun PegasusTypographyPreview() {
+    Column(
+        Modifier
+            .background(color = PegasusThemeProvider.colorScheme.background)
+    ) {
+
+        Column(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
+            PegasusUIText(
+                text = "displayLarge",
+                textStyle = MaterialTheme.typography.displayLarge.copy()
+            )
+
+            Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
+
+            PegasusUIText(
+                text = "displayMedium",
+                textStyle = MaterialTheme.typography.displayMedium
+            )
+            Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
+
+            PegasusUIText(
+                text = "displaySmall",
+                textStyle = MaterialTheme.typography.displaySmall
+            )
+            Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
+
+            PegasusUIText(
+                text = "headlineLarge",
+                textStyle = MaterialTheme.typography.headlineLarge
+            )
+            Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
+
+            PegasusUIText(
+                text = "headlineMedium",
+                textStyle = MaterialTheme.typography.headlineMedium
+            )
+            Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
+
+            PegasusUIText(
+                text = "headlineSmall",
+                textStyle = MaterialTheme.typography.headlineSmall
+            )
+            Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
+
+            PegasusUIText(text = "titleLarge", textStyle = MaterialTheme.typography.titleLarge)
+
+            Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
+
+            PegasusUIText(
+                text = "titleMedium",
+                textStyle = MaterialTheme.typography.titleMedium
+            )
+
+            Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
+
+            PegasusUIText(text = "titleSmall", textStyle = MaterialTheme.typography.titleSmall)
+            Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
+
+            PegasusUIText(text = "bodyLarge", textStyle = MaterialTheme.typography.bodyLarge)
+            Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
+
+            PegasusUIText(text = "bodyMedium", textStyle = MaterialTheme.typography.bodyMedium)
+            Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
+
+            PegasusUIText(text = "labelSmall", textStyle = MaterialTheme.typography.labelSmall)
+        }
+
+
+    }
+}
+
+
+
 @SofiaPreviews
 @Composable
 fun PegasusUIText_Sofia_Preview() {
     SofiaTheme {
-        Column(
-            Modifier
-                .verticalScroll(rememberScrollState())
-                .background(color = PegasusThemeProvider.colorScheme.background)
-        ) {
-
-            Column(modifier = Modifier.padding(PegasusThemeProvider.spacing.spacing6)) {
-                PegasusUIText(
-                    text = "displayLarge",
-                    textStyle = MaterialTheme.typography.displayLarge.copy()
-                )
-
-                Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
-
-                PegasusUIText(
-                    text = "displayMedium",
-                    textStyle = MaterialTheme.typography.displayMedium
-                )
-                Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
-
-                PegasusUIText(
-                    text = "displaySmall",
-                    textStyle = MaterialTheme.typography.displaySmall
-                )
-                Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
-
-                PegasusUIText(
-                    text = "headlineLarge",
-                    textStyle = MaterialTheme.typography.headlineLarge
-                )
-                Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
-
-                PegasusUIText(
-                    text = "headlineMedium",
-                    textStyle = MaterialTheme.typography.headlineMedium
-                )
-                Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
-
-                PegasusUIText(
-                    text = "headlineSmall",
-                    textStyle = MaterialTheme.typography.headlineSmall
-                )
-                Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
-
-                PegasusUIText(text = "titleLarge", textStyle = MaterialTheme.typography.titleLarge)
-
-                Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
-
-                PegasusUIText(
-                    text = "titleMedium",
-                    textStyle = MaterialTheme.typography.titleMedium
-                )
-
-                Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
-
-                PegasusUIText(text = "titleSmall", textStyle = MaterialTheme.typography.titleSmall)
-                Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
-
-                PegasusUIText(text = "bodyLarge", textStyle = MaterialTheme.typography.bodyLarge)
-                Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
-
-                PegasusUIText(text = "bodyMedium", textStyle = MaterialTheme.typography.bodyMedium)
-                Spacer(modifier = Modifier.height(PegasusThemeProvider.spacing.spacing6))
-
-                PegasusUIText(text = "labelSmall", textStyle = MaterialTheme.typography.labelSmall)
-            }
-
-
-        }
+        PegasusTypographyPreview()
     }
 }
 
