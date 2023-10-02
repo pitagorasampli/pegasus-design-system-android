@@ -5,6 +5,10 @@ plugins {
     id 'maven-publish'
 }
 
+def keystorePropertiesFile = rootProject.file("azure-config.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
 android {
 
     publishing {
@@ -69,7 +73,20 @@ publishing {
         }
 
     }
+
+
+    repositories {
+        maven {
+            name = 'azure'
+            url keystoreProperties['repositoryUrl']
+            credentials {
+                username keystoreProperties['userName']
+                password keystoreProperties['azureMavenAccessToken']
+            }
+        }
+    }
 }
+
 
 dependencies {
     implementation(Compose.composeAnimation)

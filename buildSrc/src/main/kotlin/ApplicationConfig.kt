@@ -16,10 +16,16 @@ object Releases {
 
 }
 
-object Publishing{
-    //Publishing Configs
-    const val android_ds_publish_library_group_id = "com.github.pitagorasampli"
-    const val android_ds_publish_library_artifact_id = "pegasus-design-system-android"
+object Publishing {
+    //Publishing Configs for Github
+    /*   const val android_ds_publish_library_group_id = "com.github.pitagorasampli"
+       const val android_ds_publish_library_artifact_id = "pegasus-design-system-android"
+       const val android_ds_publish_release_version_name = "0.0.8-Test"
+       */
+
+    //Publishing Configs for Azure
+    const val android_ds_publish_library_group_id = "br.com.cogna"
+    const val android_ds_publish_library_artifact_id = "pegasus-android"
     const val android_ds_publish_release_version_name = "0.0.8-Test"
 }
 
